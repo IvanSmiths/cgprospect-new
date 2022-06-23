@@ -10,11 +10,11 @@ export default function Home(props) {
 
   return (
     <Layout>
-      <div container spacing={3}>
+      <div>
         {topRatedProducts.map((product) => (
           <Link href={`product/${product.slug}`} key={product.name}>
             <a>
-              <div item md={4}>
+              <div>
                 <ProductItem product={product} />
               </div>
             </a>

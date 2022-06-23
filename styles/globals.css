@@ -14,3 +14,8 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.navbar {
+  background-color: rgb(164, 68, 68);
+  display: flex;
+}
