@@ -7,7 +7,13 @@ export default function ProductItem({ product }) {
     <div>
       <Link href={`/product/${product.slug}`} passHref>
         <div>
-          <img alt="" src={product.image} title={product.name}></img>
+          <img
+            alt=""
+            src={product.image}
+            width="300px"
+            height="300px"
+            title={product.name}
+          ></img>
           <div>
             <h1>{product.name}</h1>
             <input value={product.rating} readOnly></input>

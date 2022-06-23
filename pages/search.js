@@ -1,9 +1,7 @@
 import { useRouter } from "next/router";
-import Layout from "../components/Layout";
 import db from "../utils/db";
 import Link from "next/link";
 import Product from "../models/Product";
-import useStyles from "../utils/styles";
 import ProductItem from "../components/ProductItem";
 
 const PAGE_SIZE = 6;
@@ -24,7 +22,6 @@ const prices = [
 ];
 
 export default function Search(props) {
-  const classes = useStyles();
   const router = useRouter();
   const {
     query = "all",
@@ -81,101 +78,96 @@ export default function Search(props) {
   };
 
   return (
-    <Layout title="Search">
-      <div className={classes.mt1} container spacing={1}>
-        <div item md={3}>
-          <ul>
-            <li>
-              <div className={classes.fullWidth}>
-                <h2>Categories</h2>
-                <select fullWidth value={category} onChange={categoryHandler}>
-                  <option value="all">All</option>
-                  {categories &&
-                    categories.map((category) => (
-                      <option key={category} value={category}>
-                        {category}
-                      </option>
-                    ))}
-                </select>
-              </div>
-            </li>
-            <li>
-              <div className={classes.fullWidth}>
-                <h2>Brands</h2>
-                <select value={brand} onChange={brandHandler} fullWidth>
-                  <option value="all">All</option>
-                  {brands &&
-                    brands.map((brand) => (
-                      <option key={brand} value={brand}>
-                        {brand}
-                      </option>
-                    ))}
-                </select>
-              </div>
-            </li>
-            <li>
-              <div className={classes.fullWidth}>
-                <h2>Prices</h2>
-                <select value={price} onChange={priceHandler} fullWidth>
-                  <option value="all">All</option>
-                  {prices.map((price) => (
-                    <option key={price.value} value={price.value}>
-                      {price.name}
+    <div>
+      <div>
+        <ul>
+          <li>
+            <div>
+              <h2>Categories</h2>
+              <select value={category} onChange={categoryHandler}>
+                <option value="all">All</option>
+                {categories &&
+                  categories.map((category) => (
+                    <option key={category} value={category}>
+                      {category}
                     </option>
                   ))}
-                </select>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div item md={9}>
-          <div container justifyContent="space-between" alignItems="center">
-            <div item>
-              {products.length === 0 ? "No" : countProducts} Results
-              {query !== "all" && query !== "" && " : " + query}
-              {category !== "all" && " : " + category}
-              {brand !== "all" && " : " + brand}
-              {price !== "all" && " : Price " + price}
-              {rating !== "all" && " : Rating " + rating + " & up"}
-              {(query !== "all" && query !== "") ||
-              category !== "all" ||
-              brand !== "all" ||
-              rating !== "all" ||
-              price !== "all" ? (
-                <button onClick={() => router.push("/search")}>x</button>
-              ) : null}
-            </div>
-            <div item>
-              <h2 className={classes.sort}>Sort by</h2>
-              <select value={sort} onChange={sortHandler}>
-                <option value="featured">Featured</option>
-                <option value="lowest">Price: Low to High</option>
-                <option value="highest">Price: High to Low</option>
-                <option value="toprated">Customer Reviews</option>
-                <option value="newest">Newest Arrivals</option>
               </select>
             </div>
-          </div>
-          <div className={classes.mt1} container spacing={3}>
-            {products.map((product) => (
-              <Link href={`product/${product.slug}`} key={product.name}>
-                <a>
-                  <div>
-                    <ProductItem product={product} />
-                  </div>
-                </a>
-              </Link>
-            ))}
-          </div>
-          <div
-            className={classes.mt1}
-            defaultPage={parseInt(query.page || "1")}
-            count={pages}
-            onChange={pageHandler}
-          ></div>
-        </div>
+          </li>
+          <li>
+            <div>
+              <h2>Brands</h2>
+              <select value={brand} onChange={brandHandler}>
+                <option value="all">All</option>
+                {brands &&
+                  brands.map((brand) => (
+                    <option key={brand} value={brand}>
+                      {brand}
+                    </option>
+                  ))}
+              </select>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h2>Prices</h2>
+              <select value={price} onChange={priceHandler}>
+                <option value="all">All</option>
+                {prices.map((price) => (
+                  <option key={price.value} value={price.value}>
+                    {price.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </li>
+        </ul>
       </div>
-    </Layout>
+      <div>
+        <div>
+          <div>
+            {products.length === 0 ? "No" : countProducts} Results
+            {query !== "all" && query !== "" && " : " + query}
+            {category !== "all" && " : " + category}
+            {brand !== "all" && " : " + brand}
+            {price !== "all" && " : Price " + price}
+            {rating !== "all" && " : Rating " + rating + " & up"}
+            {(query !== "all" && query !== "") ||
+            category !== "all" ||
+            brand !== "all" ||
+            rating !== "all" ||
+            price !== "all" ? (
+              <button onClick={() => router.push("/search")}>x</button>
+            ) : null}
+          </div>
+          <div item>
+            <h2>Sort by</h2>
+            <select value={sort} onChange={sortHandler}>
+              <option value="featured">Featured</option>
+              <option value="lowest">Price: Low to High</option>
+              <option value="highest">Price: High to Low</option>
+              <option value="toprated">Customer Reviews</option>
+              <option value="newest">Newest Arrivals</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          {products.map((product) => (
+            <Link href={`product/${product.slug}`} key={product.name}>
+              <a>
+                <ProductItem product={product} />
+              </a>
+            </Link>
+          ))}
+        </div>
+        <div
+          defaultPage={parseInt(query.page || "1")}
+          count={pages}
+          onChange={pageHandler}
+        ></div>
+      </div>
+    </div>
   );
 }
 

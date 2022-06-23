@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import Layout from "../components/Layout";
 import db from "../utils/db";
 import Product from "../models/Product";
 import ProductItem from "../components/ProductItem";
@@ -9,19 +8,17 @@ export default function Home(props) {
   const { topRatedProducts } = props;
 
   return (
-    <Layout>
-      <div>
-        {topRatedProducts.map((product) => (
-          <Link href={`product/${product.slug}`} key={product.name}>
-            <a>
-              <div>
-                <ProductItem product={product} />
-              </div>
-            </a>
-          </Link>
-        ))}
-      </div>
-    </Layout>
+    <div>
+      {topRatedProducts.map((product) => (
+        <Link href={`product/${product.slug}`} key={product.name}>
+          <a>
+            <div>
+              <ProductItem product={product} />
+            </div>
+          </a>
+        </Link>
+      ))}
+    </div>
   );
 }
 

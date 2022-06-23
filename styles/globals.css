@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   padding: 0;
@@ -11,11 +15,7 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 .navbar {
-  background-color: rgb(164, 68, 68);
+  background-color: rgb(94, 164, 68);
   display: flex;
 }
