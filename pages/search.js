@@ -1,25 +1,10 @@
-import {
-  Box,
-  Button,
-  Grid,
-  List,
-  ListItem,
-  MenuItem,
-  Select,
-  Typography,
-} from "@material-ui/core";
-import CancelIcon from "@material-ui/icons/Cancel";
 import { useRouter } from "next/router";
-import React, { useContext } from "react";
 import Layout from "../components/Layout";
 import db from "../utils/db";
+import Link from "next/link";
 import Product from "../models/Product";
 import useStyles from "../utils/styles";
 import ProductItem from "../components/ProductItem";
-import { Store } from "../utils/Store";
-import axios from "axios";
-import Rating from "@material-ui/lab/Rating";
-import { Pagination } from "@material-ui/lab";
 
 const PAGE_SIZE = 6;
 
@@ -37,8 +22,6 @@ const prices = [
     value: "201-1000",
   },
 ];
-
-const ratings = [1, 2, 3, 4, 5];
 
 export default function Search(props) {
   const classes = useStyles();
@@ -96,87 +79,58 @@ export default function Search(props) {
   const priceHandler = (e) => {
     filterSearch({ price: e.target.value });
   };
-  const ratingHandler = (e) => {
-    filterSearch({ rating: e.target.value });
-  };
 
-  const { state, dispatch } = useContext(Store);
-  const addToCartHandler = async (product) => {
-    const existItem = state.cart.cartItems.find((x) => x._id === product._id);
-    const quantity = existItem ? existItem.quantity + 1 : 1;
-    const { data } = await axios.get(`/api/products/${product._id}`);
-    if (data.countInStock < quantity) {
-      window.alert("Sorry. Product is out of stock");
-      return;
-    }
-    dispatch({ type: "CART_ADD_ITEM", payload: { ...product, quantity } });
-    router.push("/cart");
-  };
   return (
     <Layout title="Search">
-      <Grid className={classes.mt1} container spacing={1}>
-        <Grid item md={3}>
-          <List>
-            <ListItem>
-              <Box className={classes.fullWidth}>
-                <Typography>Categories</Typography>
-                <Select fullWidth value={category} onChange={categoryHandler}>
-                  <MenuItem value="all">All</MenuItem>
+      <div className={classes.mt1} container spacing={1}>
+        <div item md={3}>
+          <ul>
+            <li>
+              <div className={classes.fullWidth}>
+                <h2>Categories</h2>
+                <select fullWidth value={category} onChange={categoryHandler}>
+                  <option value="all">All</option>
                   {categories &&
                     categories.map((category) => (
-                      <MenuItem key={category} value={category}>
+                      <option key={category} value={category}>
                         {category}
-                      </MenuItem>
+                      </option>
                     ))}
-                </Select>
-              </Box>
-            </ListItem>
-            <ListItem>
-              <Box className={classes.fullWidth}>
-                <Typography>Brands</Typography>
-                <Select value={brand} onChange={brandHandler} fullWidth>
-                  <MenuItem value="all">All</MenuItem>
+                </select>
+              </div>
+            </li>
+            <li>
+              <div className={classes.fullWidth}>
+                <h2>Brands</h2>
+                <select value={brand} onChange={brandHandler} fullWidth>
+                  <option value="all">All</option>
                   {brands &&
                     brands.map((brand) => (
-                      <MenuItem key={brand} value={brand}>
+                      <option key={brand} value={brand}>
                         {brand}
-                      </MenuItem>
+                      </option>
                     ))}
-                </Select>
-              </Box>
-            </ListItem>
-            <ListItem>
-              <Box className={classes.fullWidth}>
-                <Typography>Prices</Typography>
-                <Select value={price} onChange={priceHandler} fullWidth>
-                  <MenuItem value="all">All</MenuItem>
+                </select>
+              </div>
+            </li>
+            <li>
+              <div className={classes.fullWidth}>
+                <h2>Prices</h2>
+                <select value={price} onChange={priceHandler} fullWidth>
+                  <option value="all">All</option>
                   {prices.map((price) => (
-                    <MenuItem key={price.value} value={price.value}>
+                    <option key={price.value} value={price.value}>
                       {price.name}
-                    </MenuItem>
+                    </option>
                   ))}
-                </Select>
-              </Box>
-            </ListItem>
-            <ListItem>
-              <Box className={classes.fullWidth}>
-                <Typography>Ratings</Typography>
-                <Select value={rating} onChange={ratingHandler} fullWidth>
-                  <MenuItem value="all">All</MenuItem>
-                  {ratings.map((rating) => (
-                    <MenuItem dispaly="flex" key={rating} value={rating}>
-                      <Rating value={rating} readOnly />
-                      <Typography component="span">&amp; Up</Typography>
-                    </MenuItem>
-                  ))}
-                </Select>
-              </Box>
-            </ListItem>
-          </List>
-        </Grid>
-        <Grid item md={9}>
-          <Grid container justifyContent="space-between" alignItems="center">
-            <Grid item>
+                </select>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div item md={9}>
+          <div container justifyContent="space-between" alignItems="center">
+            <div item>
               {products.length === 0 ? "No" : countProducts} Results
               {query !== "all" && query !== "" && " : " + query}
               {category !== "all" && " : " + category}
@@ -188,42 +142,39 @@ export default function Search(props) {
               brand !== "all" ||
               rating !== "all" ||
               price !== "all" ? (
-                <Button onClick={() => router.push("/search")}>
-                  <CancelIcon />
-                </Button>
+                <button onClick={() => router.push("/search")}>x</button>
               ) : null}
-            </Grid>
-            <Grid item>
-              <Typography component="span" className={classes.sort}>
-                Sort by
-              </Typography>
-              <Select value={sort} onChange={sortHandler}>
-                <MenuItem value="featured">Featured</MenuItem>
-                <MenuItem value="lowest">Price: Low to High</MenuItem>
-                <MenuItem value="highest">Price: High to Low</MenuItem>
-                <MenuItem value="toprated">Customer Reviews</MenuItem>
-                <MenuItem value="newest">Newest Arrivals</MenuItem>
-              </Select>
-            </Grid>
-          </Grid>
-          <Grid className={classes.mt1} container spacing={3}>
+            </div>
+            <div item>
+              <h2 className={classes.sort}>Sort by</h2>
+              <select value={sort} onChange={sortHandler}>
+                <option value="featured">Featured</option>
+                <option value="lowest">Price: Low to High</option>
+                <option value="highest">Price: High to Low</option>
+                <option value="toprated">Customer Reviews</option>
+                <option value="newest">Newest Arrivals</option>
+              </select>
+            </div>
+          </div>
+          <div className={classes.mt1} container spacing={3}>
             {products.map((product) => (
-              <Grid item md={4} key={product.name}>
-                <ProductItem
-                  product={product}
-                  addToCartHandler={addToCartHandler}
-                />
-              </Grid>
+              <Link href={`product/${product.slug}`} key={product.name}>
+                <a>
+                  <div>
+                    <ProductItem product={product} />
+                  </div>
+                </a>
+              </Link>
             ))}
-          </Grid>
-          <Pagination
+          </div>
+          <div
             className={classes.mt1}
             defaultPage={parseInt(query.page || "1")}
             count={pages}
             onChange={pageHandler}
-          ></Pagination>
-        </Grid>
-      </Grid>
+          ></div>
+        </div>
+      </div>
     </Layout>
   );
 }
