@@ -76,7 +76,7 @@ export default function Search(props) {
   const priceHandler = (e) => {
     filterSearch({ price: e.target.value });
   };
-  console.log(pages);
+
   return (
     <div>
       <div>
