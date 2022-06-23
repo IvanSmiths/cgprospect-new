@@ -1,42 +1,19 @@
-import {
-  Button,
-  Card,
-  CardActionArea,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Typography,
-} from '@material-ui/core';
-import React from 'react';
-import NextLink from 'next/link';
-import Rating from '@material-ui/lab/Rating';
+/* eslint-disable @next/next/no-img-element */
+import React from "react";
+import Link from "next/link";
 
-export default function ProductItem({ product, addToCartHandler }) {
+export default function ProductItem({ product }) {
   return (
-    <Card>
-      <NextLink href={`/product/${product.slug}`} passHref>
-        <CardActionArea>
-          <CardMedia
-            component="img"
-            image={product.image}
-            title={product.name}
-          ></CardMedia>
-          <CardContent>
-            <Typography>{product.name}</Typography>
-            <Rating value={product.rating} readOnly></Rating>
-          </CardContent>
-        </CardActionArea>
-      </NextLink>
-      <CardActions>
-        <Typography>${product.price}</Typography>
-        <Button
-          size="small"
-          color="primary"
-          onClick={() => addToCartHandler(product)}
-        >
-          Add to cart
-        </Button>
-      </CardActions>
-    </Card>
+    <div>
+      <Link href={`/product/${product.slug}`} passHref>
+        <div>
+          <img alt="" src={product.image} title={product.name}></img>
+          <div>
+            <h1>{product.name}</h1>
+            <input value={product.rating} readOnly></input>
+          </div>
+        </div>
+      </Link>
+    </div>
   );
 }
