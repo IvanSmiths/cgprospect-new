@@ -3,8 +3,8 @@ import db from "../utils/db";
 import Link from "next/link";
 import Product from "../models/Product";
 import ProductItem from "../components/ProductItem";
-
-const PAGE_SIZE = 6;
+import { Pagination } from "@material-ui/lab";
+const PAGE_SIZE = 3;
 
 const prices = [
   {
@@ -76,7 +76,7 @@ export default function Search(props) {
   const priceHandler = (e) => {
     filterSearch({ price: e.target.value });
   };
-
+  console.log(pages);
   return (
     <div>
       <div>
@@ -141,7 +141,7 @@ export default function Search(props) {
               <button onClick={() => router.push("/search")}>x</button>
             ) : null}
           </div>
-          <div item>
+          <div>
             <h2>Sort by</h2>
             <select value={sort} onChange={sortHandler}>
               <option value="featured">Featured</option>
@@ -154,18 +154,18 @@ export default function Search(props) {
         </div>
         <div>
           {products.map((product) => (
-            <Link href={`product/${product.slug}`} key={product.name}>
+            <Link href={`/product/${product.slug}`} key={product.name}>
               <a>
                 <ProductItem product={product} />
               </a>
             </Link>
           ))}
         </div>
-        <div
+        <Pagination
           defaultPage={parseInt(query.page || "1")}
           count={pages}
           onChange={pageHandler}
-        ></div>
+        ></Pagination>
       </div>
     </div>
   );

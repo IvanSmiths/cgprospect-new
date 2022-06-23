@@ -33,7 +33,7 @@ const Navbar = () => {
 
   return (
     <navbar className="navbar">
-      <div display="flex" alignItems="center">
+      <div>
         <Link href="/">
           <a>
             <span>HOME</span>

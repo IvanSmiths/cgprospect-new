@@ -10,7 +10,7 @@ export default function Home(props) {
   return (
     <div>
       {topRatedProducts.map((product) => (
-        <Link href={`product/${product.slug}`} key={product.name}>
+        <Link href={`/product/${product.slug}`} key={product.name}>
           <a>
             <div>
               <ProductItem product={product} />

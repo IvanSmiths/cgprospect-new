@@ -6,8 +6,8 @@ export default function ProductScreen(props) {
   const { product } = props;
 
   return (
-    <div container spacing={1}>
-      <div item md={6} xs={12}>
+    <div>
+      <div>
         <img
           src={product.image}
           alt={product.name}
@@ -15,12 +15,10 @@ export default function ProductScreen(props) {
           height="640px"
         ></img>
       </div>
-      <div item md={3} xs={12}>
+      <div>
         <ul>
           <li>
-            <h2 component="h1" variant="h1">
-              {product.name}
-            </h2>
+            <h2>{product.name}</h2>
           </li>
           <li>
             <h2>Category: {product.category}</h2>
@@ -36,28 +34,23 @@ export default function ProductScreen(props) {
           </li>
         </ul>
       </div>
-      <div item md={3} xs={12}>
+      <div>
         <div>
           <ul>
             <li>
-              <div container>
-                <div item xs={6}>
+              <div>
+                <div>
                   <h2>Price</h2>
                 </div>
-                <div item xs={6}>
+                <div>
                   <h2>${product.price}</h2>
                 </div>
               </div>
             </li>
             <li>
-              <div container>
-                <div item xs={6}>
+              <div>
+                <div>
                   <h2>Status</h2>
-                </div>
-                <div item xs={6}>
-                  <h2>
-                    {product.countInStock > 0 ? "In stock" : "Unavailable"}
-                  </h2>
                 </div>
               </div>
             </li>
