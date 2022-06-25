@@ -33,6 +33,43 @@ export default function ProductScreen(props) {
   return (
     <>
       <Head>
+        <title>CGProspect | download {product.name} for free</title>
+        <meta
+          name="description"
+          content={`${product.name} is a free to download asset of CGProspect.`}
+        />
+
+        <meta
+          property="og:url"
+          content={`https://www.cgprospect.com/assets/${product.slug}`}
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content={`CGProspect | ${product.name}, free to download asset`}
+        />
+        <meta
+          property="og:description"
+          content={`${product.name} is a free to download asset of CGProspect`}
+        />
+        <meta property="og:image" content={`${product.image}`} />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="cgprospect.com" />
+        <meta
+          property="twitter:url"
+          content={`https://www.cgprospect.com/assets/${product.slug}`}
+        />
+        <meta
+          name="twitter:title"
+          content={`CGProspect | ${product.name}, free to download asset`}
+        />
+        <meta
+          name="twitter:description"
+          content={`${product.name} is a free to download asset of CGProspect`}
+        />
+        <meta name="twitter:image" content={`${product.image}`} />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
