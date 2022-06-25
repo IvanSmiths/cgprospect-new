@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function ProductItem({ product }) {
   return (
     <div>
-      <Link href={`/product/${product.slug}`} passHref>
+      <Link href={`/assets/${product.slug}`} passHref>
         <div>
           <img
             alt=""
