@@ -10,11 +10,7 @@ export default function Home() {
     url: "https://www.cgprospect.com/",
     potentialAction: {
       "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate:
-          "https://www.cgprospect.com/search?query={search_term_string}",
-      },
+      target: "https://www.cgprospect.com/search?query={search_term_string}",
       "query-input": "required name=search_term_string",
     },
     sameAs: [
