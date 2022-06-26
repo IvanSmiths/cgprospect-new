@@ -99,6 +99,41 @@ export default function Home() {
           All for free.
         </h1>
         <Search />
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+          eum autem quidem eligendi, beatae consequatur blanditiis provident!
+          Alias at natus corrupti quaerat id fugit et dolor totam eum, itaque
+          dolorum atque repudiandae aliquid provident molestiae voluptatibus
+          odio iusto optio officiis earum cupiditate laboriosam! Minima quidem
+          asperiores, similique ab hic consequuntur atque totam in, fugit id sed
+          quaerat recusandae eius? Corporis obcaecati, cupiditate est nemo
+          quaerat quis repudiandae deleniti aut! A possimus, accusamus cumque
+          sit voluptate, assumenda iusto eos similique esse quis illo. Nulla,
+          autem. Voluptatem eius ab ex enim vitae possimus. Nulla maxime
+          delectus sunt qui ab totam accusamus, obcaecati quam nobis neque quo
+          quos dolor ipsum asperiores placeat recusandae aperiam aliquid
+          mollitia. Dolore reiciendis fuga inventore ad veritatis suscipit
+          repellendus cumque neque, corrupti itaque consequatur commodi
+          excepturi qui. Earum fugiat tempora cupiditate voluptatibus magnam
+          quia vel neque sint eius! Expedita quidem debitis sequi facere
+          voluptatem saepe soluta, modi beatae non ab esse ratione voluptatibus,
+          pariatur hic perspiciatis deserunt culpa consectetur magni molestiae
+          natus. Quas saepe aspernatur atque tempora illo fugiat provident
+          cupiditate cum earum expedita. Reiciendis sunt, tempora, amet eius,
+          iure cumque rem expedita cum accusamus reprehenderit explicabo? Veniam
+          beatae ipsum quisquam omnis nulla saepe dignissimos numquam ducimus,
+          ab dolore sit error tempore consequuntur sequi vel dicta sed iste nisi
+          quo velit illo aliquid veritatis obcaecati deleniti. Reiciendis labore
+          doloremque soluta ut, illo voluptate autem deleniti assumenda facilis
+          magnam id harum iure deserunt minima officiis eos modi repellat error?
+          Sapiente est sed similique beatae fugiat repudiandae laboriosam
+          commodi impedit labore, fuga odio, veniam dolores error minus dolorum
+          eius aut cumque ea doloribus molestias. Ea molestiae nihil vero? Fuga
+          aspernatur fugiat praesentium quas molestias a molestiae ipsa ratione
+          soluta. Laboriosam dicta excepturi accusamus vero maiores eveniet
+          labore unde placeat fugit? Ipsam, placeat qui corrupti mollitia vero
+          earum libero recusandae alias.
+        </p>
       </header>
     </>
   );
