@@ -3,47 +3,29 @@ import Search from "../components/Search";
 import Head from "next/head";
 
 export default function Home() {
-  const schemaData = [
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      name: "CG Prospect",
-      url: "https://www.cgprospect.com/",
-      potentialAction: {
-        "@type": "SearchAction",
-        target: {
-          "@type": "EntryPoint",
-          urlTemplate:
-            "https://www.cgprospect.com/search?query={search_term_string}",
-        },
-        "query-input": "required name=search_term_string",
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "CG Prospect",
+    url: "https://www.cgprospect.com/",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate:
+          "https://www.cgprospect.com/search?query={search_term_string}",
       },
-      sameAs: [
-        "https://www.instagram.com/cgprospect/",
-        "https://www.facebook.com/CG-Prospect-106271838337510",
-        "https://www.artstation.com/cgprospect",
-        "https://www.pinterest.com/cgprospect/",
-        "https://www.patreon.com/cgprospect",
-      ],
+      "query-input": "required name=search_term_string",
     },
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      url: "https://www.cgprospect.com/",
-      logo: "https://www.cgprospect.com/images/logo.png",
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      name: "Home",
-      description: "Free 8K Textures, to put in your projects.",
-      publisher: {
-        "@type": "Person",
-        name: "Ivan Smiths",
-      },
-      license: "http://creativecommons.org/licenses/by-nc-sa/3.0/us/deed.en_US",
-    },
-  ];
+    sameAs: [
+      "https://www.instagram.com/cgprospect/",
+      "https://www.facebook.com/CG-Prospect-106271838337510",
+      "https://www.artstation.com/cgprospect",
+      "https://www.pinterest.com/cgprospect/",
+      "https://www.patreon.com/cgprospect",
+    ],
+  };
+
   return (
     <>
       <Head>
