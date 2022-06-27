@@ -28,6 +28,7 @@ body {
   --smallFontHeight: clamp(1.4rem, 1.4vw, 2.7rem);
 
   --marginLayout: 10vw;
+  --marginFirstElement: 4rem;
   --marginElement: 4rem;
   --marginSection: clamp(17rem, 24vw, 28rem);
 }
@@ -99,7 +100,10 @@ a {
 }
 
 .navbar {
-  background-color: rgb(94, 164, 68);
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--main-bg-color);
   display: flex;
   width: 100%;
 }

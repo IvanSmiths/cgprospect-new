@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-import Search from "../components/Search";
+
 import Head from "next/head";
-import Link from "next/link";
+import Hero from "../components/Homepage/Hero";
 
 export default function Home() {
   const schemaData = [
@@ -90,44 +90,7 @@ export default function Home() {
           content="https://res.cloudinary.com/deino2cjx/image/upload/v1627848204/nextjs_media/apple-icon-152x152_gbwieu.png"
         />
       </Head>
-      <header className="header-home-cnt">
-        <h1 className="big-font">
-          Free 3D Models, <br />
-          Free Textures, <br />
-          No limits.
-        </h1>
-
-        <Search />
-        <ul className="home-searchbar-suggested">
-          <li className="main-font-color">Suggested:</li>
-          <li className="sec-font-color">
-            <Link href={`https://www.cgprospect.com/search?query=pebbles`}>
-              <a>Pebbles, </a>
-            </Link>
-            <Link href={`https://www.cgprospect.com/search?query=rock`}>
-              <a>Rock, </a>
-            </Link>
-            <Link href={`https://www.cgprospect.com/search?query=apple`}>
-              <a>Apple, </a>
-            </Link>
-            <Link href={`https://www.cgprospect.com/search?query=lemon`}>
-              <a>Lemon, </a>
-            </Link>
-            <Link href={`https://www.cgprospect.com/search?query=terrain`}>
-              <a>Terrain, </a>
-            </Link>
-          </li>
-        </ul>
-
-        <p>
-          Up to 8K, seamless pbr textures and low-poly/high-poly 3d models
-          totally free to download. Use them in your renders, movies or games
-          without any worries. No limits, no paywall,{" "}
-          <a className="main-color" href="https://www.patreon.com/cgprospect">
-            donate if you like to.
-          </a>
-        </p>
-      </header>
+      <Hero />
     </>
   );
 }
