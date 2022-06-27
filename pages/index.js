@@ -1,7 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 
 import Head from "next/head";
-import Hero from "../components/Homepage/Hero";
+import Hero from "../components/Homepage/HomeHero";
+import Assets from "../components/Homepage/HomeAssets";
+import HomeModel from "../components/Homepage/HomeModel";
 
 export default function Home() {
   const schemaData = [
@@ -91,6 +93,8 @@ export default function Home() {
         />
       </Head>
       <Hero />
+      <Assets />
+      <HomeModel />
     </>
   );
 }

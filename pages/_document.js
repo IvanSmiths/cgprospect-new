@@ -8,7 +8,7 @@ export default class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
           <link rel="icon" href="/favicon.ico" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
+
           <meta name="application-name" content="CG Prospect" />
           <meta content="#ffda38" name="theme-color" />
           <meta name="apple-mobile-web-app-title" content="CG Prospect" />

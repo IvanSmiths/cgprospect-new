@@ -1,7 +1,7 @@
-import Search from "../../components/Search";
+import Search from "../Search";
 import Link from "next/link";
 
-const Hero = () => {
+const HomeHero = () => {
   return (
     <header className="header-home-cnt">
       <h1 className="big-font">
@@ -52,4 +52,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default HomeHero;

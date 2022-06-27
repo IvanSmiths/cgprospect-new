@@ -23,14 +23,16 @@ body {
 
   --bigFont: clamp(3rem, 6.9vw, 9rem);
   --bigFontHeight: clamp(3rem, 12vw, 11rem);
-  --mediumFont: clamp(1.8rem, 5.7vw, 5rem);
-  --smallFont: clamp(1rem, 0.8vw, 1.1rem);
+  --mediumFont: clamp(1.8rem, 1.9vw, 2.9rem);
+  --smallFont: clamp(0.95rem, 0.7vw, 1.1rem);
   --smallFontHeight: clamp(1.4rem, 1.4vw, 2.7rem);
 
-  --marginLayout: 10vw;
   --marginFirstElement: 4rem;
-  --marginElement: 4rem;
-  --marginSection: clamp(17rem, 24vw, 28rem);
+  --marginSection: clamp(15rem, 18vw, 24rem);
+  --marginLayout: 7vw;
+  --marginLayoutBig: 15vw;
+  --marginElement: 1rem;
+  --marginElementHome: 4rem;
 }
 
 @import "./home.css";
