@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { useState } from "react";
 import { useRouter } from "next/router";
 
@@ -13,18 +14,24 @@ function Search() {
     router.push(`/search?query=${query}`);
   };
   return (
-    <form onSubmit={submitHandler}>
+    <form className="searchbar-cnt" onSubmit={submitHandler}>
       <label className="label-header-home" htmlFor="seacrh-assets">
         Search assets
       </label>
       <input
+        className="searchbar"
         id="seacrh-assets"
         name="query"
-        placeholder="Search products"
+        placeholder="Search 3d assets"
         onChange={queryChangeHandler}
       />
-      <button type="submit" aria-label="search">
-        search
+      <button className="btn-searchbar" type="submit" aria-label="search">
+        <img
+          width="23px"
+          height="23px"
+          src="/images/icon-search.svg"
+          alt="icon search"
+        />
       </button>
     </form>
   );

@@ -4,17 +4,13 @@ import Search from "./Search";
 const Navbar = () => {
   return (
     <navbar className="navbar">
-      <div>
-        <Link href="/">
-          <a>
-            <span>HOME</span>
-          </a>
-        </Link>
-      </div>
+      <Link href="/">
+        <a>
+          <span>HOME</span>
+        </a>
+      </Link>
 
-      <div>
-        <Search />
-      </div>
+      <Search />
     </navbar>
   );
 };

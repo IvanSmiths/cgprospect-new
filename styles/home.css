@@ -1,3 +1,25 @@
+.header-home-cnt {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.home-searchbar-suggested {
+  margin-top: 0.5rem;
+}
+
+.header-home-cnt h1 {
+  margin-bottom: var(--marginElement);
+}
+
+.header-home-cnt p {
+  margin-top: var(--marginElement);
+  padding: 0 30vw 0 30vw;
+}
+
 .label-header-home {
   position: absolute;
   opacity: 0;

@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Search from "../components/Search";
 import Head from "next/head";
+import Link from "next/link";
 
 export default function Home() {
   const schemaData = [
@@ -44,8 +45,11 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>title</title>
-        <meta name="description" content="desc" />
+        <title>CG Prospect - Free 3d models and free textures</title>
+        <meta
+          name="description"
+          content="On CG Prospect you can find dozens of free 3d models and free textures for your renders, games, and more."
+        />
         <meta name="msvalidate.01" content="BDB55CCC263678714F8D543BAAFF6FAC" />
         <meta
           name="facebook-domain-verification"
@@ -55,12 +59,6 @@ export default function Home() {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
         />
-        <title>CG Prospect, Free PBR Textures & 3D Models</title>
-        <meta
-          name="description"
-          content="On CG Prospect you can find free 3d models and free textures for your renders, games, and more."
-        />
-
         <meta property="og:url" content="https://www.cgprospect.com/" />
         <meta property="og:type" content="website" />
         <meta
@@ -92,47 +90,42 @@ export default function Home() {
           content="https://res.cloudinary.com/deino2cjx/image/upload/v1627848204/nextjs_media/apple-icon-152x152_gbwieu.png"
         />
       </Head>
-      <header className="cnt-header-home">
-        <h1>
-          3D Models, <br />
-          8K Textures, <br />
-          All for free.
+      <header className="header-home-cnt">
+        <h1 className="big-font">
+          Free 3D Models, <br />
+          Free Textures, <br />
+          No limits.
         </h1>
+
         <Search />
+        <ul className="home-searchbar-suggested">
+          <li className="main-font-color">Suggested:</li>
+          <li className="sec-font-color">
+            <Link href={`https://www.cgprospect.com/search?query=pebbles`}>
+              <a>Pebbles, </a>
+            </Link>
+            <Link href={`https://www.cgprospect.com/search?query=rock`}>
+              <a>Rock, </a>
+            </Link>
+            <Link href={`https://www.cgprospect.com/search?query=apple`}>
+              <a>Apple, </a>
+            </Link>
+            <Link href={`https://www.cgprospect.com/search?query=lemon`}>
+              <a>Lemon, </a>
+            </Link>
+            <Link href={`https://www.cgprospect.com/search?query=terrain`}>
+              <a>Terrain, </a>
+            </Link>
+          </li>
+        </ul>
+
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
-          eum autem quidem eligendi, beatae consequatur blanditiis provident!
-          Alias at natus corrupti quaerat id fugit et dolor totam eum, itaque
-          dolorum atque repudiandae aliquid provident molestiae voluptatibus
-          odio iusto optio officiis earum cupiditate laboriosam! Minima quidem
-          asperiores, similique ab hic consequuntur atque totam in, fugit id sed
-          quaerat recusandae eius? Corporis obcaecati, cupiditate est nemo
-          quaerat quis repudiandae deleniti aut! A possimus, accusamus cumque
-          sit voluptate, assumenda iusto eos similique esse quis illo. Nulla,
-          autem. Voluptatem eius ab ex enim vitae possimus. Nulla maxime
-          delectus sunt qui ab totam accusamus, obcaecati quam nobis neque quo
-          quos dolor ipsum asperiores placeat recusandae aperiam aliquid
-          mollitia. Dolore reiciendis fuga inventore ad veritatis suscipit
-          repellendus cumque neque, corrupti itaque consequatur commodi
-          excepturi qui. Earum fugiat tempora cupiditate voluptatibus magnam
-          quia vel neque sint eius! Expedita quidem debitis sequi facere
-          voluptatem saepe soluta, modi beatae non ab esse ratione voluptatibus,
-          pariatur hic perspiciatis deserunt culpa consectetur magni molestiae
-          natus. Quas saepe aspernatur atque tempora illo fugiat provident
-          cupiditate cum earum expedita. Reiciendis sunt, tempora, amet eius,
-          iure cumque rem expedita cum accusamus reprehenderit explicabo? Veniam
-          beatae ipsum quisquam omnis nulla saepe dignissimos numquam ducimus,
-          ab dolore sit error tempore consequuntur sequi vel dicta sed iste nisi
-          quo velit illo aliquid veritatis obcaecati deleniti. Reiciendis labore
-          doloremque soluta ut, illo voluptate autem deleniti assumenda facilis
-          magnam id harum iure deserunt minima officiis eos modi repellat error?
-          Sapiente est sed similique beatae fugiat repudiandae laboriosam
-          commodi impedit labore, fuga odio, veniam dolores error minus dolorum
-          eius aut cumque ea doloribus molestias. Ea molestiae nihil vero? Fuga
-          aspernatur fugiat praesentium quas molestias a molestiae ipsa ratione
-          soluta. Laboriosam dicta excepturi accusamus vero maiores eveniet
-          labore unde placeat fugit? Ipsam, placeat qui corrupti mollitia vero
-          earum libero recusandae alias.
+          Up to 8K, seamless pbr textures and low-poly/high-poly 3d models
+          totally free to download. Use them in your renders, movies or games
+          without any worries. No limits, no paywall,{" "}
+          <a className="main-color" href="https://www.patreon.com/cgprospect">
+            donate if you like to.
+          </a>
         </p>
       </header>
     </>

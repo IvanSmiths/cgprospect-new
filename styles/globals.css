@@ -9,11 +9,89 @@ body,
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: var(--main-bg-color);
+  font-family: Verdana, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+:root {
+  --main-bg-color: #000000;
+  --sec-bg-color: #343434;
+  --main-color: #ffda38;
+  --main-font-color: #ffffff;
+  --sec-font-color: #bdbdbd;
+
+  --bigFont: clamp(3rem, 6.9vw, 9rem);
+  --bigFontHeight: clamp(3rem, 12vw, 11rem);
+  --mediumFont: clamp(1.8rem, 5.7vw, 5rem);
+  --smallFont: clamp(1rem, 0.8vw, 1.1rem);
+  --smallFontHeight: clamp(1.4rem, 1.4vw, 2.7rem);
+
+  --marginLayout: 10vw;
+  --marginElement: 4rem;
+  --marginSection: clamp(17rem, 24vw, 28rem);
 }
 
 @import "./home.css";
+
+button {
+  border: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.home-searchbar-suggested {
+  display: flex;
+}
+
+.big-font {
+  font-size: var(--bigFont);
+  line-height: var(--bigFontHeight);
+}
+
+.medium-font {
+  font-size: var(--mediumFont);
+}
+
+.small-font {
+  font-size: var(--smallFont);
+  line-height: var(--smallFontHeight);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span,
+li,
+em,
+strong {
+  color: var(--main-font-color);
+}
+
+.main-color {
+  color: var(--main-color);
+}
+
+.main-font-color {
+  color: var(--main-font-color);
+}
+
+.sec-font-color {
+  color: var(--sec-font-color);
+}
+
+p {
+  color: var(--sec-font-color);
+  font-size: var(--smallFont);
+  line-height: var(--smallFontHeight);
+}
 
 a {
   color: inherit;
@@ -23,4 +101,21 @@ a {
 .navbar {
   background-color: rgb(94, 164, 68);
   display: flex;
+  width: 100%;
+}
+
+.searchbar-cnt {
+  width: 30%;
+  display: flex;
+}
+
+.searchbar {
+  width: 100%;
+  padding: 0.6rem;
+}
+
+.btn-searchbar {
+  cursor: pointer;
+  padding: 0.6rem;
+  background-color: var(--sec-bg-color);
 }
