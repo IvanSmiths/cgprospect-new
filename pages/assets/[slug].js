@@ -3,8 +3,7 @@ import Product from "../../models/Product";
 import db from "../../utils/db";
 import Head from "next/head";
 
-export default function ProductScreen(props) {
-  const { product } = props;
+export default function ProductScreen({ product }) {
   const schemaData = {
     "@context": "https://schema.org/",
     "@type": "BreadcrumbList",
@@ -92,9 +91,9 @@ export default function ProductScreen(props) {
             <li>
               <h2>Category: {product.category}</h2>
             </li>
-            <li>
-              <h2>Brand: {product.brand}</h2>
-            </li>
+            {product.brand ? <li>{product.brand}</li> : null}
+            <li></li>
+            {product.png2k ? <li>{product.png2k}</li> : null}
             <li>
               <input value={product.rating} readOnly></input>
             </li>
