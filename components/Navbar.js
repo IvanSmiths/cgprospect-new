@@ -1,4 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
+import constants from "../utils/constants";
 import Search from "./Search";
 
 const Navbar = () => {
@@ -6,11 +8,50 @@ const Navbar = () => {
     <navbar className="navbar">
       <Link href="/">
         <a>
-          <span>HOME</span>
+          <img
+            width="140px"
+            height="50px"
+            src="/images/logo-navbar.svg"
+            alt="logo"
+          />
         </a>
       </Link>
-
       <Search />
+      <ul className="navbar-ul-cnt">
+        <li>
+          <Link href="/">
+            <a>3D Models</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/">
+            <a>Textures</a>
+          </Link>
+        </li>
+        <li>
+          <a>Cahoot</a>
+        </li>
+      </ul>
+      <ul className="navbar-social-cnt">
+        <li>
+          <img
+            className="icon-social"
+            width={constants.IconWidth}
+            height={constants.IconWidth}
+            src="/images/icon-instagram.svg"
+            alt="icon of a texture"
+          />
+        </li>
+        <li>
+          <img
+            className="icon-social"
+            width={constants.IconWidth}
+            height={constants.IconWidth}
+            src="/images/icon-linkedin.svg"
+            alt="icon of a texture"
+          />
+        </li>
+      </ul>
     </navbar>
   );
 };

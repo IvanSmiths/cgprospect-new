@@ -102,6 +102,31 @@ a {
   text-decoration: none;
 }
 
+input {
+  border: 0;
+  border-radius: 0.2rem 0 0 0.2rem;
+}
+
+::-moz-selection {
+  color: var(--main-color);
+}
+::selection {
+  color: var(--main-color);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--sec-bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0.3rem;
+  background: var(--main-font-color);
+}
+
 .navbar {
   position: fixed;
   z-index: 9;
@@ -109,7 +134,31 @@ a {
   left: 0;
   background-color: var(--main-bg-color);
   display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding: 0.4rem 3rem;
   width: 100%;
+}
+
+.navbar .searchbar-cnt {
+  width: 20%;
+}
+
+.navbar-social-cnt {
+  margin-left: auto;
+  display: flex;
+}
+
+.navbar-social-cnt img {
+  width: 50px;
+}
+
+.navbar-ul-cnt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+  gap: var(--marginElementLittle);
 }
 
 .searchbar-cnt {
