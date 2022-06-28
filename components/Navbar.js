@@ -16,7 +16,7 @@ const Navbar = () => {
           />
         </a>
       </Link>
-      <Search />
+      <Search id="searchbar-navbar" />
       <ul className="navbar-ul-cnt">
         <li>
           <Link href="/">
@@ -29,7 +29,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <a>Cahoot</a>
+          <a href="https://www.patreon.com/cgprospect">Cahoot</a>
         </li>
       </ul>
       <ul className="navbar-social-cnt">

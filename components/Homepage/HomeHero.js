@@ -10,7 +10,7 @@ const HomeHero = () => {
         No limits.
       </h1>
 
-      <Search />
+      <Search id="searchbar-home" />
       <ul className="home-searchbar-suggested">
         <li className="main-font-color">Suggested:</li>
         <li className="sec-font-color">

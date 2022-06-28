@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 
-function Search() {
+function Search({ id }) {
   const router = useRouter();
 
   const [query, setQuery] = useState("");
@@ -15,12 +15,12 @@ function Search() {
   };
   return (
     <form className="searchbar-cnt" onSubmit={submitHandler}>
-      <label className="label-header-home" htmlFor="seacrh-assets">
+      <label className="label-header-home" htmlFor={id}>
         Search assets
       </label>
       <input
         className="searchbar"
-        id="seacrh-assets"
+        id={id}
         name="query"
         placeholder="Search 3d assets"
         onChange={queryChangeHandler}

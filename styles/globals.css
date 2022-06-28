@@ -141,7 +141,11 @@ input {
 }
 
 .navbar .searchbar-cnt {
-  width: 20%;
+  width: 18%;
+}
+
+.navbar .btn-searchbar {
+  padding: 0.4rem 0.6rem;
 }
 
 .navbar-social-cnt {
