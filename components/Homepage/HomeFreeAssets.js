@@ -3,19 +3,24 @@ import React from "react";
 import constants from "../../utils/constants";
 import Img from "../Img";
 
-function HomeModel() {
+function HomeFreeAssets() {
   return (
-    <section className="homepage-model-cnt">
-      <div className="homepage-model-text-cnt">
-        <h2 className="medium-font">Free highpoly 3d models</h2>
+    <section className="home-free-3d-models-cnt">
+      <Img
+        classNames="home-img-full"
+        webp="/images/3d-model-peach.webp"
+        src="/images/3d-model-peach.jpg"
+        height="1080"
+        width="1920"
+        alt="peach 3d model"
+      />
+      <div className="home-free-3d-models-text-cnt">
+        <h2 className="medium-font">Texture for your games and renders</h2>
         <p>
           Photogrammetry is one of the best workflow in order to create high
           quality pbr textures. It can ensure sharp displacement and normal
           maps, especially with rocks, terrains, wood and other complex shapes.
-          CG Prospect textures are baked with extremely <br /> <br />{" "}
-          Photogrammetry is one of the best workflow in order to create high
-          quality pbr textures. It can ensure sharp displacement and normal
-          maps, especially with rocks,
+          CG Prospect textures are baked with extremely
         </p>
         <ul className="homepage-assets-ul-cnt">
           <li>
@@ -40,18 +45,8 @@ function HomeModel() {
           </li>
         </ul>
       </div>
-      <div className="homepage-model-img-cnt">
-        <Img
-          classNames="homepage-model-img"
-          webp="/images/3d-model-avocado.webp"
-          src="/images/3d-model-avocado.jpg"
-          height="360"
-          width="360"
-          alt="wood render"
-        />
-      </div>
     </section>
   );
 }
 
-export default HomeModel;
+export default HomeFreeAssets;

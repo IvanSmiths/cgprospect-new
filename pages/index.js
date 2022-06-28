@@ -2,8 +2,11 @@
 
 import Head from "next/head";
 import Hero from "../components/Homepage/HomeHero";
-import Assets from "../components/Homepage/HomeAssets";
+import HomeAssets from "../components/Homepage/HomeAssets";
 import HomeModel from "../components/Homepage/HomeModel";
+import HomeTexture from "../components/Homepage/HomeTexture";
+import HomeFreeAssets from "../components/Homepage/HomeFreeAssets";
+import HomeMyself from "../components/Homepage/HomeMyself";
 
 export default function Home() {
   const schemaData = [
@@ -93,8 +96,11 @@ export default function Home() {
         />
       </Head>
       <Hero />
-      <Assets />
+      <HomeAssets />
       <HomeModel />
+      <HomeTexture />
+      <HomeFreeAssets />
+      <HomeMyself />
     </>
   );
 }

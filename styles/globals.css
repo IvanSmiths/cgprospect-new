@@ -104,6 +104,7 @@ a {
 
 .navbar {
   position: fixed;
+  z-index: 9;
   top: 0;
   left: 0;
   background-color: var(--main-bg-color);
@@ -130,9 +131,13 @@ a {
 .icon {
   background-color: var(--sec-bg-color);
   padding: 0.6rem;
-  border-radius: 25rem;
+  border-radius: 2rem;
 }
 
 picture img {
   border-radius: 0.5rem;
+}
+
+.icon-social {
+  padding: 0.6rem;
 }

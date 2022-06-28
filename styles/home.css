@@ -50,6 +50,11 @@
   margin-top: var(--marginElement);
 }
 
+.assets-img img {
+  width: 100%;
+  height: auto;
+}
+
 .homepage-assets-ul-cnt {
   margin-top: var(--marginElement);
   display: flex;
@@ -71,7 +76,7 @@
 }
 
 .homepage-model-text-cnt {
-  width: 40%;
+  width: 50%;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -83,16 +88,110 @@
 }
 
 .homepage-model-img-cnt {
-  width: 60%;
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
   margin-right: var(--marginLayoutBig);
 }
 
-.homepage-model-img img {
+.homepage-model-img-cnt picture {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.homepage-model-img-cnt img {
+  width: 100%;
+  height: auto;
+}
+.homepage-texture-cnt {
+  margin-top: var(--marginSection);
+  display: flex;
+  gap: var(--marginLayout);
+}
+
+.homepage-texture-text-cnt {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-right: var(--marginLayoutBig);
+}
+
+.homepage-texture-text-cnt p {
+  margin-top: var(--marginElement);
+}
+
+.homepage-texture-img-cnt {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  margin-left: var(--marginLayoutBig);
+}
+
+.homepage-texture-img-cnt picture {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.homepage-texture-img-cnt img {
   width: 100%;
   height: auto;
 }
 
-.assets-img img {
+.home-free-3d-models-cnt {
+  position: relative;
+  margin-top: var(--marginSection);
+}
+
+.home-img-full {
   width: 100%;
   height: auto;
+}
+
+.home-img-full img {
+  width: 100%;
+  height: auto;
+}
+
+.home-free-3d-models-text-cnt {
+  position: absolute;
+  left: var(--marginLayout);
+  top: 33%;
+  width: 30%;
+}
+
+.home-free-3d-models-text-cnt p {
+  margin-top: var(--marginElement);
+}
+
+.home-myself-text-cnt h2 {
+  margin-bottom: var(--marginElement);
+}
+
+.home-myself-cnt {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: var(--marginLayout);
+  margin-top: var(--marginSection);
+}
+
+.home-myself-img-cnt {
+  margin-left: var(--marginLayout);
+}
+
+.home-myself-img img {
+  width: 80%;
+  height: auto;
+}
+
+.home-myself-text-cnt {
+  margin-right: var(--marginLayout);
+}
+
+.homepage-myself-ul-cnt {
+  margin-top: var(--marginElement);
+  display: flex;
+  gap: var(--marginElementLittle);
 }
