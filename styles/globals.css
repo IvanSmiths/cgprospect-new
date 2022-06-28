@@ -23,7 +23,7 @@ body {
 
   --bigFont: clamp(3rem, 6.9vw, 9rem);
   --bigFontHeight: clamp(3rem, 12vw, 11rem);
-  --mediumFont: clamp(1.8rem, 1.9vw, 2.9rem);
+  --mediumFont: clamp(1.8rem, 1.8vw, 2.9rem);
   --smallFont: clamp(0.95rem, 0.7vw, 1.1rem);
   --smallFontHeight: clamp(1.4rem, 1.4vw, 2.7rem);
 
@@ -31,7 +31,8 @@ body {
   --marginSection: clamp(15rem, 18vw, 24rem);
   --marginLayout: 7vw;
   --marginLayoutBig: 15vw;
-  --marginElement: 1rem;
+  --marginElement: 2rem;
+  --marginElementLittle: 1rem;
   --marginElementHome: 4rem;
 }
 
@@ -124,4 +125,14 @@ a {
   cursor: pointer;
   padding: 0.6rem;
   background-color: var(--sec-bg-color);
+}
+
+.icon {
+  background-color: var(--sec-bg-color);
+  padding: 0.6rem;
+  border-radius: 25rem;
+}
+
+picture img {
+  border-radius: 0.5rem;
 }

@@ -40,12 +40,30 @@
 
 .homepage-assets-text-cnt {
   width: 40%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   margin-right: var(--marginLayoutBig);
 }
 
 .homepage-assets-text-cnt p {
   margin-top: var(--marginElement);
 }
+
+.homepage-assets-ul-cnt {
+  margin-top: var(--marginElement);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--marginElementLittle);
+}
+
+.homepage-assets-ul-cnt li {
+  display: flex;
+  align-items: center;
+  gap: var(--marginElementLittle);
+}
+
 .homepage-model-cnt {
   margin-top: var(--marginSection);
   display: flex;

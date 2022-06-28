@@ -5,7 +5,7 @@ function HomeModel() {
   return (
     <section className="homepage-model-cnt">
       <div className="homepage-model-text-cnt">
-        <h2 className="medium-font">8K Textures</h2>
+        <h2 className="medium-font">Free highpoly 3d models</h2>
         <p>
           Photogrammetry is one of the best workflow in order to create high
           quality pbr textures. It can ensure sharp displacement and normal
@@ -16,8 +16,8 @@ function HomeModel() {
       <div className="homepage-model-img-cnt">
         <Img
           classNames="homepage-model-img"
-          webp="/images/texture-wood.webp"
-          src="/images/texture-wood.jpg"
+          webp="/images/3d-model-avocado.webp"
+          src="/images/3d-model-avocado.jpg"
           height="360"
           width="360"
           alt="wood render"
