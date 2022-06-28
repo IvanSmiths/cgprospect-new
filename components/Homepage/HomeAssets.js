@@ -2,6 +2,7 @@
 import React from "react";
 import Img from "../Img";
 import constants from "../../utils/constants";
+import Link from "next/link";
 
 const HomeAssets = () => {
   return (
@@ -46,6 +47,11 @@ const HomeAssets = () => {
             <strong>Free texture yeah!</strong>
           </li>
         </ul>
+        <Link href="/">
+          <a className="btn-one">
+            <span>See 3d models</span>
+          </a>
+        </Link>
       </div>
     </section>
   );
