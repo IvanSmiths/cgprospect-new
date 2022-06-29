@@ -154,8 +154,8 @@ export default function Search(props) {
               <Link href={`/assets/${product.slug}`}>
                 <a>
                   <img
-                    height="400px"
-                    width="400px"
+                    height="350px"
+                    width="350px"
                     src={product.image}
                     alt={product.name}
                   />

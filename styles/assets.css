@@ -19,6 +19,10 @@
   width: 85%;
 }
 
+.assets-list-cnt span {
+  font-weight: 800;
+}
+
 .MuiPaginationItem-root {
   color: var(--main-font-color) !important;
 }
@@ -58,5 +62,8 @@
 }
 
 .assets-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--marginElement);
   margin-top: var(--marginElementLittle);
 }
