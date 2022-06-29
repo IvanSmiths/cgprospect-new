@@ -82,7 +82,7 @@ export default function Search(props) {
       <section className="assets-filters-cnt">
         <ul className="assets-filters">
           <li>
-            Categories
+            Asset
             <select
               className="assets-select"
               value={category}
@@ -98,7 +98,7 @@ export default function Search(props) {
             </select>
           </li>
           <li>
-            Brands
+            Category
             <select
               className="assets-select"
               value={brand}
@@ -249,6 +249,7 @@ export async function getServerSideProps({ query }) {
       : { _id: -1 };
 
   const categories = await Product.find().distinct("category");
+  const method = await Product.find().distinct("method");
   const brands = await Product.find().distinct("brand");
   const productDocs = await Product.find(
     {
@@ -276,6 +277,7 @@ export async function getServerSideProps({ query }) {
 
   const products = productDocs.map(db.convertDocToObj);
 
+  console.log(method);
   return {
     props: {
       products,
