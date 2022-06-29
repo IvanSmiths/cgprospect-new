@@ -34,6 +34,9 @@ body {
   --marginElement: 2rem;
   --marginElementLittle: 1rem;
   --marginElementHome: 4rem;
+
+  --radius: 6px;
+  --radiusInput: 4px;
 }
 
 @import "./home.css";
@@ -99,9 +102,10 @@ p {
   line-height: var(--smallFontHeight);
 }
 
-input {
+input,
+select {
   border: 0;
-  border-radius: 0.2rem 0 0 0.2rem;
+  border-radius: var(--radiusInput) 0 0 var(--radiusInput);
 }
 
 ::-moz-selection {
@@ -120,7 +124,7 @@ input {
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 0.3rem;
+  border-radius: var(--radiusInput);
   background: var(--main-font-color);
 }
 
@@ -184,8 +188,8 @@ input {
   border-radius: 2rem;
 }
 
-picture img {
-  border-radius: 0.5rem;
+img {
+  border-radius: var(--radius);
 }
 
 .icon-social {

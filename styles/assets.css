@@ -1,6 +1,7 @@
 .assets-cnt {
   margin-top: var(--marginFirstElement);
   display: flex;
+  gap: var(--marginElement);
 }
 
 .assets-filters-cnt {
@@ -10,7 +11,8 @@
 .assets-filters-cnt ul {
   position: sticky;
   top: 5rem;
-  left: 0;
+  left: 0px;
+  margin-left: 20px;
 }
 
 .assets-list-cnt {
@@ -40,5 +42,21 @@
   cursor: pointer;
 }
 
+.assets-filter-search-cnt form {
+  width: 100%;
+}
+
 .assets-select {
+  border: 0;
+  border-radius: var(--radiusInput);
+  padding: 0.6rem;
+  margin-top: var(--marginElementLittle);
+}
+
+.assets-select option {
+  border-radius: 0 !important;
+}
+
+.assets-list {
+  margin-top: var(--marginElementLittle);
 }

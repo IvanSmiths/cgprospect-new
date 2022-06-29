@@ -2,6 +2,7 @@
 import { useRouter } from "next/router";
 import db from "../utils/db";
 import Link from "next/link";
+import SearchBar from "../components/Search";
 import Product from "../models/Product";
 import { Pagination } from "@material-ui/lab";
 const PAGE_SIZE = 3;
@@ -159,12 +160,12 @@ export default function Search(props) {
               value={sort}
               onChange={sortHandler}
             >
-              <option value="featured">Featured</option>
-              <option value="lowest">Price: Low to High</option>
-              <option value="highest">Price: High to Low</option>
-              <option value="toprated">Customer Reviews</option>
-              <option value="newest">Newest Arrivals</option>
+              <option value="newest">Old</option>
+              <option value="oldest">New</option>
             </select>
+          </li>
+          <li className="assets-filter-search-cnt">
+            <SearchBar id="searchbar-page" />
           </li>
         </ul>
       </section>
@@ -174,7 +175,7 @@ export default function Search(props) {
           {products.length === 0 ? "results" : "Results"}{" "}
           {query !== "all" && query !== "" && "for"}{" "}
         </span>
-        <a>{query !== "all" && query !== "" && query}</a>{" "}
+        <span>{query !== "all" && query !== "" && query}</span>{" "}
         {category !== "all" && " : " + category}
         {method !== "all" && " : " + method}
         {brand !== "all" && " : " + brand}
@@ -192,7 +193,7 @@ export default function Search(props) {
             x
           </span>
         ) : null}
-        <ul>
+        <ul className="assets-list">
           {products.map((product) => (
             <li key={product.slug}>
               <Link href={`/assets/${product.slug}`}>
@@ -262,15 +263,9 @@ export async function getServerSideProps({ query }) {
       : {};
 
   const order =
-    sort === "featured"
-      ? { featured: -1 }
-      : sort === "lowest"
-      ? { price: 1 }
-      : sort === "highest"
-      ? { price: -1 }
-      : sort === "toprated"
-      ? { rating: -1 }
-      : sort === "newest"
+    sort === "newest"
+      ? { createdAt: 1 }
+      : sort === "oldestest"
       ? { createdAt: -1 }
       : { _id: -1 };
 
@@ -305,7 +300,6 @@ export async function getServerSideProps({ query }) {
 
   const products = productDocs.map(db.convertDocToObj);
 
-  console.log(method);
   return {
     props: {
       products,
