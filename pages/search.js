@@ -167,6 +167,12 @@ export default function Search(props) {
           <li className="assets-filter-search-cnt">
             <SearchBar id="searchbar-page" />
           </li>
+          <li
+            className="assets-reset-filters"
+            onClick={() => router.push("/search")}
+          >
+            Reset Search
+          </li>
         </ul>
       </section>
       <main className="assets-list-cnt">
@@ -176,23 +182,6 @@ export default function Search(props) {
           {query !== "all" && query !== "" && "for"}{" "}
         </span>
         <span>{query !== "all" && query !== "" && query}</span>{" "}
-        {category !== "all" && " : " + category}
-        {method !== "all" && " : " + method}
-        {brand !== "all" && " : " + brand}
-        {price !== "all" && " : Price " + price}
-        {rating !== "all" && " : Rating " + rating + " & up"}
-        {(query !== "all" && query !== "") ||
-        category !== "all" ||
-        brand !== "all" ||
-        rating !== "all" ||
-        price !== "all" ? (
-          <span
-            className="assets-reset-filters"
-            onClick={() => router.push("/search")}
-          >
-            x
-          </span>
-        ) : null}
         <ul className="assets-list">
           {products.map((product) => (
             <li key={product.slug}>
