@@ -5,22 +5,8 @@ import Link from "next/link";
 import SearchBar from "../components/Search";
 import Product from "../models/Product";
 import { Pagination } from "@material-ui/lab";
-const PAGE_SIZE = 3;
 
-const prices = [
-  {
-    name: "$1 to $50",
-    value: "1-50",
-  },
-  {
-    name: "$51 to $200",
-    value: "51-200",
-  },
-  {
-    name: "$201 to $1000",
-    value: "201-1000",
-  },
-];
+const PAGE_SIZE = 3;
 
 export default function Search(props) {
   const router = useRouter();
@@ -29,8 +15,6 @@ export default function Search(props) {
     category = "all",
     method = "all",
     brand = "all",
-    price = "all",
-    rating = "all",
     sort = "featured",
   } = router.query;
   const { products, countProducts, categories, methods, brands, pages } = props;
@@ -80,9 +64,6 @@ export default function Search(props) {
   };
   const sortHandler = (e) => {
     filterSearch({ sort: e.target.value });
-  };
-  const priceHandler = (e) => {
-    filterSearch({ price: e.target.value });
   };
 
   return (
@@ -137,21 +118,6 @@ export default function Search(props) {
                 ))}
             </select>
           </li>
-          <li>
-            Prices
-            <select
-              className="assets-select"
-              value={price}
-              onChange={priceHandler}
-            >
-              <option value="all">All</option>
-              {prices.map((price) => (
-                <option key={price.value} value={price.value}>
-                  {price.name}
-                </option>
-              ))}
-            </select>
-          </li>
 
           <li>
             Sort by
@@ -160,8 +126,8 @@ export default function Search(props) {
               value={sort}
               onChange={sortHandler}
             >
-              <option value="newest">Old</option>
               <option value="oldest">New</option>
+              <option value="newest">Old</option>
             </select>
           </li>
           <li className="assets-filter-search-cnt">
@@ -215,8 +181,6 @@ export async function getServerSideProps({ query }) {
   const category = query.category || "";
   const method = query.method || "";
   const brand = query.brand || "";
-  const price = query.price || "";
-  const rating = query.rating || "";
   const sort = query.sort || "";
   const searchQuery = query.query || "";
 
@@ -232,46 +196,23 @@ export async function getServerSideProps({ query }) {
   const categoryFilter = category && category !== "all" ? { category } : {};
   const methodFilter = method && method !== "all" ? { method } : {};
   const brandFilter = brand && brand !== "all" ? { brand } : {};
-  const ratingFilter =
-    rating && rating !== "all"
-      ? {
-          rating: {
-            $gte: Number(rating),
-          },
-        }
-      : {};
-  // 10-50
-  const priceFilter =
-    price && price !== "all"
-      ? {
-          price: {
-            $gte: Number(price.split("-")[0]),
-            $lte: Number(price.split("-")[1]),
-          },
-        }
-      : {};
 
   const order =
     sort === "newest"
-      ? { createdAt: 1 }
-      : sort === "oldestest"
       ? { createdAt: -1 }
+      : sort === "oldestest"
+      ? { createdAt: 1 }
       : { _id: -1 };
 
   const categories = await Product.find().distinct("category");
   const methods = await Product.find().distinct("method");
   const brands = await Product.find().distinct("brand");
-  const productDocs = await Product.find(
-    {
-      ...queryFilter,
-      ...categoryFilter,
-      ...methodFilter,
-      ...priceFilter,
-      ...brandFilter,
-      ...ratingFilter,
-    },
-    "-reviews"
-  )
+  const productDocs = await Product.find({
+    ...queryFilter,
+    ...categoryFilter,
+    ...methodFilter,
+    ...brandFilter,
+  })
     .sort(order)
     .skip(pageSize * (page - 1))
     .limit(pageSize)
@@ -281,9 +222,7 @@ export async function getServerSideProps({ query }) {
     ...queryFilter,
     ...categoryFilter,
     ...methodFilter,
-    ...priceFilter,
     ...brandFilter,
-    ...ratingFilter,
   });
   await db.disconnect();
 
