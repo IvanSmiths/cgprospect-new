@@ -1,0 +1,44 @@
+.assets-cnt {
+  margin-top: var(--marginFirstElement);
+  display: flex;
+}
+
+.assets-filters-cnt {
+  width: 15%;
+}
+
+.assets-filters-cnt ul {
+  position: sticky;
+  top: 5rem;
+  left: 0;
+}
+
+.assets-list-cnt {
+  width: 85%;
+}
+
+.MuiPaginationItem-root {
+  color: var(--main-font-color) !important;
+}
+
+.assets-filters {
+  display: flex;
+  flex-direction: column;
+  gap: var(--marginElement);
+}
+
+.assets-filters li {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--smallFont);
+  font-weight: 800;
+}
+
+.assets-reset-filters {
+  color: aliceblue;
+  background-color: none;
+  cursor: pointer;
+}
+
+.assets-select {
+}

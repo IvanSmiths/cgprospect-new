@@ -27,7 +27,7 @@ body {
   --smallFont: clamp(0.95rem, 0.7vw, 1.1rem);
   --smallFontHeight: clamp(1.4rem, 1.4vw, 2.7rem);
 
-  --marginFirstElement: 4rem;
+  --marginFirstElement: 6rem;
   --marginSection: clamp(15rem, 18vw, 24rem);
   --marginLayout: 7vw;
   --marginLayoutBig: 15vw;
@@ -37,6 +37,7 @@ body {
 }
 
 @import "./home.css";
+@import "./assets.css";
 
 button {
   border: 0;
@@ -73,6 +74,7 @@ h6,
 p,
 a,
 span,
+button,
 li,
 em,
 strong {
@@ -95,11 +97,6 @@ p {
   color: var(--sec-font-color);
   font-size: var(--smallFont);
   line-height: var(--smallFontHeight);
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
 }
 
 input {
