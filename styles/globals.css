@@ -32,6 +32,7 @@ body {
   --marginLayout: 7vw;
   --marginLayoutBig: 15vw;
   --marginElement: 2rem;
+  --marginElementBig: 5rem;
   --marginElementLittle: 1rem;
   --marginElementHome: 4rem;
 
@@ -41,6 +42,7 @@ body {
 
 @import "./home.css";
 @import "./assets.css";
+@import "./single-asset.css";
 
 button {
   border: 0;
@@ -48,6 +50,10 @@ button {
 
 li {
   list-style: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 .home-searchbar-suggested {

@@ -2,6 +2,7 @@
 import Product from "../../models/Product";
 import db from "../../utils/db";
 import Head from "next/head";
+import Link from "next/link";
 
 export default function ProductScreen({ product }) {
   const schemaData = {
@@ -32,7 +33,7 @@ export default function ProductScreen({ product }) {
   return (
     <>
       <Head>
-        <title>CGProspect | download {product.name} for free</title>
+        <title>CG Prospect | Download {product.name} for free</title>
         <meta
           name="description"
           content={`${product.name} is a free to download asset of CGProspect.`}
@@ -74,58 +75,113 @@ export default function ProductScreen({ product }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
         />
       </Head>
-      <div>
-        <div>
+      <div className="single-asset-cnt">
+        <section className="single-asset-img-cnt">
           <img
             src={product.image}
             alt={product.name}
             width="640px"
             height="640px"
-          ></img>
-        </div>
-        <div>
-          <ul>
-            <li>
-              <h2>{product.name}</h2>
-            </li>
-            <li>
-              <h2>Category: {product.category}</h2>
-            </li>
-            {product.brand ? <li>{product.brand}</li> : null}
-            <li></li>
-            {product.png2k ? <li>{product.png2k}</li> : null}
-            <li>
-              <input value={product.rating} readOnly></input>
-            </li>
-            <li>
-              <h2> Description: {product.description}</h2>
-            </li>
-          </ul>
-        </div>
-        <div>
+          />
+          <img
+            src={product.imageSec}
+            alt={product.name}
+            width="640px"
+            height="640px"
+          />
+        </section>
+        <main className="single-asset-info-cnt">
           <div>
-            <ul>
+            <ul className="single-asset-info">
               <li>
-                <div>
-                  <div>
-                    <h2>Price</h2>
-                  </div>
-                  <div>
-                    <h2>${product.price}</h2>
-                  </div>
-                </div>
+                <h1>
+                  {product.name} {product.category}
+                </h1>
               </li>
               <li>
-                <div>
-                  <div>
-                    <h2>Status</h2>
-                  </div>
-                </div>
+                Asset:{" "}
+                {product.category === "3D Model" ? (
+                  <Link href="http://localhost:3000/search?query=&category=3D+Model">
+                    <a>{product.category}</a>
+                  </Link>
+                ) : (
+                  <Link href="http://localhost:3000/search?query=&category=Texture">
+                    <a>{product.category}</a>
+                  </Link>
+                )}
+              </li>
+              <li>
+                Category:{" "}
+                <Link
+                  href={`http://localhost:3000/search?query=&category=${product.brand}`}
+                >
+                  <a>{product.brand}</a>
+                </Link>
+              </li>
+              <li>
+                Scale: <span>{product.scale}</span>
+              </li>
+              <li>
+                Location: <span>{product.location}</span>
+              </li>
+              {product.lowPoly ? (
+                <li>
+                  <a href={product.lowPoly}>Lowpoly</a>
+                </li>
+              ) : null}
+              {product.midPoly ? (
+                <li>
+                  <a href={product.midPoly}>Midpoly</a>
+                </li>
+              ) : null}
+              {product.highPoly ? (
+                <li>
+                  <a href={product.highPoly}>Highpoly</a>
+                </li>
+              ) : null}
+              {product.jpg2k ? (
+                <li>
+                  <a href={product.jpg2k}>JPG 2K</a>
+                </li>
+              ) : null}
+              {product.jpg4k ? (
+                <li>
+                  <a href={product.jpg4k}>JPG 4K</a>
+                </li>
+              ) : null}
+              {product.jpg8k ? (
+                <li>
+                  <a href={product.jpg8k}>JPG 8K</a>
+                </li>
+              ) : null}
+              {product.png2k ? (
+                <li>
+                  <a href={product.png2k}>PNG 2K</a>
+                </li>
+              ) : null}
+              {product.png4k ? (
+                <li>
+                  <a href={product.png4k}>PNG 4K</a>
+                </li>
+              ) : null}
+              {product.png8k ? (
+                <li>
+                  <a href={product.png8k}>PNG 8K</a>
+                </li>
+              ) : null}
+              <li>
+                <p> Description: {product.description}</p>
               </li>
             </ul>
+            <div className="sponsor-cnt">
+              <span>Sponsored by:</span>
+              <span className="sponsor-name">No one yet</span>
+              <img src="/images/banner.svg" alt="" />
+            </div>
           </div>
-        </div>
+        </main>
       </div>
+      <section></section>
     </>
   );
 }
@@ -135,7 +191,7 @@ export async function getServerSideProps(context) {
   const { slug } = params;
 
   await db.connect();
-  const product = await Product.findOne({ slug }, "-reviews").lean();
+  const product = await Product.findOne({ slug }).lean();
   await db.disconnect();
   return {
     props: {
