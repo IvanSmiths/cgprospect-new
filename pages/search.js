@@ -26,16 +26,18 @@ export default function Search(props) {
   const {
     query = "all",
     category = "all",
+    method = "all",
     brand = "all",
     price = "all",
     rating = "all",
     sort = "featured",
   } = router.query;
-  const { products, countProducts, categories, brands, pages } = props;
+  const { products, countProducts, categories, methods, brands, pages } = props;
 
   const filterSearch = ({
     page,
     category,
+    method,
     brand,
     sort,
     min,
@@ -50,6 +52,7 @@ export default function Search(props) {
     if (searchQuery) query.searchQuery = searchQuery;
     if (sort) query.sort = sort;
     if (category) query.category = category;
+    if (method) query.method = method;
     if (brand) query.brand = brand;
     if (price) query.price = price;
     if (rating) query.rating = rating;
@@ -63,6 +66,10 @@ export default function Search(props) {
   };
   const categoryHandler = (e) => {
     filterSearch({ category: e.target.value });
+  };
+
+  const methodHandler = (e) => {
+    filterSearch({ method: e.target.value });
   };
   const pageHandler = (e, page) => {
     filterSearch({ page });
@@ -93,6 +100,22 @@ export default function Search(props) {
                 categories.map((category) => (
                   <option key={category} value={category}>
                     {category}
+                  </option>
+                ))}
+            </select>
+          </li>
+          <li>
+            Method
+            <select
+              className="assets-select"
+              value={method}
+              onChange={methodHandler}
+            >
+              <option value="all">All</option>
+              {methods &&
+                methods.map((method) => (
+                  <option key={method} value={method}>
+                    {method}
                   </option>
                 ))}
             </select>
@@ -153,6 +176,7 @@ export default function Search(props) {
         </span>
         <a>{query !== "all" && query !== "" && query}</a>{" "}
         {category !== "all" && " : " + category}
+        {method !== "all" && " : " + method}
         {brand !== "all" && " : " + brand}
         {price !== "all" && " : Price " + price}
         {rating !== "all" && " : Rating " + rating + " & up"}
@@ -199,6 +223,7 @@ export async function getServerSideProps({ query }) {
   const pageSize = query.pageSize || PAGE_SIZE;
   const page = query.page || 1;
   const category = query.category || "";
+  const method = query.method || "";
   const brand = query.brand || "";
   const price = query.price || "";
   const rating = query.rating || "";
@@ -215,6 +240,7 @@ export async function getServerSideProps({ query }) {
         }
       : {};
   const categoryFilter = category && category !== "all" ? { category } : {};
+  const methodFilter = method && method !== "all" ? { method } : {};
   const brandFilter = brand && brand !== "all" ? { brand } : {};
   const ratingFilter =
     rating && rating !== "all"
@@ -249,12 +275,13 @@ export async function getServerSideProps({ query }) {
       : { _id: -1 };
 
   const categories = await Product.find().distinct("category");
-  const method = await Product.find().distinct("method");
+  const methods = await Product.find().distinct("method");
   const brands = await Product.find().distinct("brand");
   const productDocs = await Product.find(
     {
       ...queryFilter,
       ...categoryFilter,
+      ...methodFilter,
       ...priceFilter,
       ...brandFilter,
       ...ratingFilter,
@@ -269,6 +296,7 @@ export async function getServerSideProps({ query }) {
   const countProducts = await Product.countDocuments({
     ...queryFilter,
     ...categoryFilter,
+    ...methodFilter,
     ...priceFilter,
     ...brandFilter,
     ...ratingFilter,
@@ -285,6 +313,7 @@ export async function getServerSideProps({ query }) {
       page,
       pages: Math.ceil(countProducts / pageSize),
       categories,
+      methods,
       brands,
     },
   };
