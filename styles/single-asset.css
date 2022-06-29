@@ -35,6 +35,12 @@
 }
 
 .single-asset-info li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.single-asset-info li {
   font-weight: 800;
 }
 

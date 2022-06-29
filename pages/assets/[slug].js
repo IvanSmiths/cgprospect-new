@@ -99,6 +99,7 @@ export default function ProductScreen({ product }) {
                 </h1>
               </li>
               <li>
+                <img src="/images/icon-category.svg" width="50px" alt="" />{" "}
                 Asset:{" "}
                 {product.category === "3D Model" ? (
                   <Link href="http://localhost:3000/search?query=&category=3D+Model">
