@@ -30,6 +30,10 @@
   gap: var(--marginElementLittle);
 }
 
+.single-asset-info h1 {
+  padding-bottom: var(--marginElement);
+}
+
 .single-asset-info li {
   font-weight: 800;
 }
@@ -50,4 +54,41 @@ span {
 .sponsor-name {
   font-weight: 800;
   font-size: var(--mediumFont);
+}
+
+.more-details-cnt {
+  display: flex;
+}
+
+.download-cnt {
+  display: flex;
+  flex-direction: column;
+  gap: var(--marginElement);
+  width: 50%;
+}
+
+.download-list {
+  display: flex;
+  gap: var(--marginElement);
+}
+
+.download-list a {
+  color: var(--main-color);
+  background-color: var(--sec-bg-color);
+  padding: 0.6rem;
+  font-weight: 800;
+  border-radius: 3rem;
+}
+
+.first-list {
+  margin-top: var(--marginElementBig);
+}
+
+.first-list,
+.medium-font {
+  font-weight: 800;
+}
+
+.donation-cnt {
+  width: 50%;
 }

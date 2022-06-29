@@ -124,51 +124,7 @@ export default function ProductScreen({ product }) {
               <li>
                 Location: <span>{product.location}</span>
               </li>
-              {product.lowPoly ? (
-                <li>
-                  <a href={product.lowPoly}>Lowpoly</a>
-                </li>
-              ) : null}
-              {product.midPoly ? (
-                <li>
-                  <a href={product.midPoly}>Midpoly</a>
-                </li>
-              ) : null}
-              {product.highPoly ? (
-                <li>
-                  <a href={product.highPoly}>Highpoly</a>
-                </li>
-              ) : null}
-              {product.jpg2k ? (
-                <li>
-                  <a href={product.jpg2k}>JPG 2K</a>
-                </li>
-              ) : null}
-              {product.jpg4k ? (
-                <li>
-                  <a href={product.jpg4k}>JPG 4K</a>
-                </li>
-              ) : null}
-              {product.jpg8k ? (
-                <li>
-                  <a href={product.jpg8k}>JPG 8K</a>
-                </li>
-              ) : null}
-              {product.png2k ? (
-                <li>
-                  <a href={product.png2k}>PNG 2K</a>
-                </li>
-              ) : null}
-              {product.png4k ? (
-                <li>
-                  <a href={product.png4k}>PNG 4K</a>
-                </li>
-              ) : null}
-              {product.png8k ? (
-                <li>
-                  <a href={product.png8k}>PNG 8K</a>
-                </li>
-              ) : null}
+
               <li>
                 <p> Description: {product.description}</p>
               </li>
@@ -181,7 +137,68 @@ export default function ProductScreen({ product }) {
           </div>
         </main>
       </div>
-      <section></section>
+      <section className="more-details-cnt">
+        <div className="donation-cnt"></div>
+        <div className="download-cnt">
+          <ul className="download-list">
+            <li className="medium-font first-list">Downloads:</li>
+            {product.lowPoly ? <li>Lowpoly</li> : null}
+            {product.lowPoly ? (
+              <li>
+                <a href={product.lowPoly}>Lowpoly</a>
+              </li>
+            ) : null}
+            {product.midPoly ? <li>Midpoly</li> : null}
+            {product.midPoly ? (
+              <li>
+                <a href={product.midPoly}>Midpoly</a>
+              </li>
+            ) : null}
+            {product.highPoly ? <li>Highpoly</li> : null}
+            {product.highPoly ? (
+              <li>
+                <a href={product.highPoly}>Highpoly</a>
+              </li>
+            ) : null}
+          </ul>
+          <ul className="download-list">
+            {product.jpg2k ? <li>JPG</li> : null}
+            {product.jpg2k ? (
+              <li>
+                <a href={product.jpg2k}>2K</a>
+              </li>
+            ) : null}
+            {product.jpg4k ? (
+              <li>
+                <a href={product.jpg4k}>4K</a>
+              </li>
+            ) : null}
+            {product.jpg8k ? (
+              <li>
+                <a href={product.jpg8k}>8K</a>
+              </li>
+            ) : null}
+          </ul>
+          <ul className="download-list">
+            {product.png2k ? <li>PNG</li> : null}
+            {product.png2k ? (
+              <li>
+                <a href={product.png2k}>2K</a>
+              </li>
+            ) : null}
+            {product.png4k ? (
+              <li>
+                <a href={product.png4k}>4K</a>
+              </li>
+            ) : null}
+            {product.png8k ? (
+              <li>
+                <a href={product.png8k}>8K</a>
+              </li>
+            ) : null}
+          </ul>
+        </div>
+      </section>
     </>
   );
 }
