@@ -17,6 +17,7 @@ const productSchema = new mongoose.Schema(
     name: { type: String, required: true },
     slug: { type: String, required: true, unique: true },
     category: { type: String, required: true },
+    asset: { type: String },
     image: { type: String, required: true },
     jpg2k: { type: String },
     jpg4k: { type: String },

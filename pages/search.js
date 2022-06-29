@@ -149,7 +149,7 @@ export default function Search(props) {
         <span>
           {products.length === 0 ? "No" : countProducts}{" "}
           {products.length === 0 ? "results" : "Results"}{" "}
-          {products.length === 0 ? "for" : ""}{" "}
+          {query !== "all" && query !== "" && "for"}{" "}
         </span>
         <a>{query !== "all" && query !== "" && query}</a>{" "}
         {category !== "all" && " : " + category}
