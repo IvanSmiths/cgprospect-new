@@ -2,6 +2,7 @@
 import Product from "../../models/Product";
 import db from "../../utils/db";
 import Head from "next/head";
+import constants from "../../utils/constants";
 import Link from "next/link";
 
 export default function ProductScreen({ product }) {
@@ -99,8 +100,13 @@ export default function ProductScreen({ product }) {
                 </h1>
               </li>
               <li>
-                <img src="/images/icon-category.svg" width="50px" alt="" />{" "}
-                Asset:{" "}
+                <img
+                  src="/images/icon-asset.svg"
+                  width={constants.IconWidth}
+                  height={constants.IconWidth}
+                  alt="category"
+                />
+                Asset:
                 {product.category === "3D Model" ? (
                   <Link href="http://localhost:3000/search?query=&category=3D+Model">
                     <a>{product.category}</a>
@@ -112,22 +118,45 @@ export default function ProductScreen({ product }) {
                 )}
               </li>
               <li>
-                Category:{" "}
+                <img
+                  src="/images/icon-category.svg"
+                  width={constants.IconWidth}
+                  height={constants.IconWidth}
+                  alt="category"
+                />
+                Category:
                 <Link
                   href={`http://localhost:3000/search?query=&category=${product.brand}`}
                 >
                   <a>{product.brand}</a>
                 </Link>
               </li>
-              <li>
+              {/* <li>
+                <img
+                  src="/images/icon-scale.svg"
+                  width={constants.IconWidth}
+                  height={constants.IconWidth}
+                  alt="category"
+                />
                 Scale: <span>{product.scale}</span>
-              </li>
+              </li> */}
               <li>
+                <img
+                  src="/images/icon-location.svg"
+                  width={constants.IconWidth}
+                  height={constants.IconWidth}
+                  alt="category"
+                />
                 Location: <span>{product.location}</span>
               </li>
-
               <li>
-                <p> Description: {product.description}</p>
+                <img
+                  src="/images/icon-date.svg"
+                  width={constants.IconWidth}
+                  height={constants.IconWidth}
+                  alt="category"
+                />
+                Published: {product.createdAt}
               </li>
             </ul>
             <div className="sponsor-cnt">
@@ -199,6 +228,7 @@ export default function ProductScreen({ product }) {
             ) : null}
           </ul>
         </div>
+        <p>Description: {product.description}</p>
       </section>
     </>
   );

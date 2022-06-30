@@ -63,6 +63,7 @@ span {
 }
 
 .more-details-cnt {
+  margin-top: var(--marginSection);
   display: flex;
 }
 
