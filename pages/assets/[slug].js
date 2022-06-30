@@ -93,12 +93,10 @@ export default function ProductScreen({ product }) {
         </section>
         <main className="single-asset-info-cnt">
           <div>
+            <h1>
+              Free to download: <br /> {product.name} {product.category}
+            </h1>
             <ul className="single-asset-info">
-              <li>
-                <h1>
-                  {product.name} {product.category}
-                </h1>
-              </li>
               <li>
                 <img
                   src="/images/icon-asset.svg"
@@ -131,15 +129,24 @@ export default function ProductScreen({ product }) {
                   <a>{product.brand}</a>
                 </Link>
               </li>
-              {/* <li>
+              <li>
                 <img
                   src="/images/icon-scale.svg"
                   width={constants.IconWidth}
                   height={constants.IconWidth}
                   alt="category"
                 />
-                Scale: <span>{product.scale}</span>
-              </li> */}
+                Scale: <span>{product.scale} meters</span>
+              </li>
+              <li>
+                <img
+                  src="/images/icon-method.svg"
+                  width={constants.IconWidth}
+                  height={constants.IconWidth}
+                  alt="category"
+                />
+                Method: <span>{product.method}</span>
+              </li>
               <li>
                 <img
                   src="/images/icon-location.svg"
@@ -156,7 +163,7 @@ export default function ProductScreen({ product }) {
                   height={constants.IconWidth}
                   alt="category"
                 />
-                Published: {product.createdAt}
+                Published: <span>17/09/2021</span>
               </li>
             </ul>
             <div className="sponsor-cnt">
@@ -170,65 +177,50 @@ export default function ProductScreen({ product }) {
       <section className="more-details-cnt">
         <div className="donation-cnt"></div>
         <div className="download-cnt">
-          <ul className="download-list">
-            <li className="medium-font first-list">Downloads:</li>
-            {product.lowPoly ? <li>Lowpoly</li> : null}
-            {product.lowPoly ? (
+          <span className="medium-font">Downloads:</span>
+          {product.lowPoly ? (
+            <ul className="download-list">
               <li>
                 <a href={product.lowPoly}>Lowpoly</a>
               </li>
-            ) : null}
-            {product.midPoly ? <li>Midpoly</li> : null}
-            {product.midPoly ? (
               <li>
                 <a href={product.midPoly}>Midpoly</a>
               </li>
-            ) : null}
-            {product.highPoly ? <li>Highpoly</li> : null}
-            {product.highPoly ? (
               <li>
                 <a href={product.highPoly}>Highpoly</a>
               </li>
-            ) : null}
-          </ul>
-          <ul className="download-list">
-            {product.jpg2k ? <li>JPG</li> : null}
-            {product.jpg2k ? (
+            </ul>
+          ) : null}
+          {product.jpg2k ? (
+            <ul className="download-list">
+              <li>JPG</li>
               <li>
                 <a href={product.jpg2k}>2K</a>
               </li>
-            ) : null}
-            {product.jpg4k ? (
               <li>
                 <a href={product.jpg4k}>4K</a>
               </li>
-            ) : null}
-            {product.jpg8k ? (
               <li>
                 <a href={product.jpg8k}>8K</a>
               </li>
-            ) : null}
-          </ul>
-          <ul className="download-list">
-            {product.png2k ? <li>PNG</li> : null}
-            {product.png2k ? (
+            </ul>
+          ) : null}
+          {product.jpg2k ? (
+            <ul className="download-list">
+              <li>PNG</li>
               <li>
                 <a href={product.png2k}>2K</a>
               </li>
-            ) : null}
-            {product.png4k ? (
               <li>
                 <a href={product.png4k}>4K</a>
               </li>
-            ) : null}
-            {product.png8k ? (
               <li>
                 <a href={product.png8k}>8K</a>
               </li>
-            ) : null}
-          </ul>
+            </ul>
+          ) : null}
+          <p>Description: {product.description}</p>
         </div>
-        <p>Description: {product.description}</p>
       </section>
     </>
   );

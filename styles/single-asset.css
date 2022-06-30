@@ -26,11 +26,13 @@
 
 .single-asset-info {
   display: flex;
-  flex-direction: column;
-  gap: var(--marginElementLittle);
+  flex-direction: row;
+  padding-right: 20vw;
+  flex-wrap: wrap;
+  gap: var(--marginElementLittle) var(--marginElementBig);
 }
 
-.single-asset-info h1 {
+.single-asset-cnt h1 {
   padding-bottom: var(--marginElement);
 }
 
@@ -76,6 +78,7 @@ span {
 
 .download-list {
   display: flex;
+
   gap: var(--marginElement);
 }
 
