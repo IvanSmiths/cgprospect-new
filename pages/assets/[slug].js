@@ -106,11 +106,11 @@ export default function ProductScreen({ product }) {
                 />
                 Asset:
                 {product.category === "3D Model" ? (
-                  <Link href="http://localhost:3000/search?query=&category=3D+Model">
+                  <Link href="/search?query=&category=3D+Model">
                     <a>{product.category}</a>
                   </Link>
                 ) : (
-                  <Link href="http://localhost:3000/search?query=&category=Texture">
+                  <Link href="/search?query=&category=Texture">
                     <a>{product.category}</a>
                   </Link>
                 )}
@@ -123,9 +123,7 @@ export default function ProductScreen({ product }) {
                   alt="category"
                 />
                 Category:
-                <Link
-                  href={`http://localhost:3000/search?query=&category=${product.brand}`}
-                >
+                <Link href={`/search?query=&brand=${product.brand}`}>
                   <a>{product.brand}</a>
                 </Link>
               </li>

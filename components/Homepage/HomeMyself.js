@@ -46,6 +46,16 @@ function HomeMyself() {
             />
             <strong>Passionated blender user</strong>
           </li>
+          <li>
+            <a
+              href="https://www.ivansmiths.com"
+              target="_blank"
+              className="btn"
+              rel="noreferrer noopener"
+            >
+              See my website
+            </a>
+          </li>
         </ul>
         <ul className="homepage-myself-ul-cnt">
           <li>
@@ -75,6 +85,7 @@ function HomeMyself() {
               alt="icon of a texture"
             />
           </li>
+          <li></li>
         </ul>
       </div>
     </section>

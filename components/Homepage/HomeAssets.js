@@ -47,10 +47,8 @@ const HomeAssets = () => {
             <strong>Free texture yeah!</strong>
           </li>
         </ul>
-        <Link href="/">
-          <a className="btn-one">
-            <span>See 3d models</span>
-          </a>
+        <Link href="/search?query=">
+          <a className="btn">See all the assets</a>
         </Link>
       </div>
     </section>

@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import Link from "next/link";
 import React from "react";
 import constants from "../../utils/constants";
 import Img from "../Img";
@@ -37,6 +38,11 @@ function HomeModel() {
               alt="icon of a texture"
             />
             <strong>Free texture yeah!</strong>
+          </li>
+          <li>
+            <Link href="/search?query=&category=Texture">
+              <a className="btn">See 3d models</a>
+            </Link>
           </li>
         </ul>
       </div>

@@ -102,6 +102,16 @@ strong {
   color: var(--sec-font-color);
 }
 
+.btn {
+  padding: 1rem;
+  background-color: var(--main-color);
+  width: fit-content;
+  color: var(--main-bg-color);
+  margin-top: var(--marginElement);
+  font-weight: 800;
+  border-radius: var(--radius);
+}
+
 p {
   color: var(--sec-font-color);
   font-size: var(--smallFont);

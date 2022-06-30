@@ -2,6 +2,7 @@
 import React from "react";
 import Img from "../Img";
 import constants from "../../utils/constants";
+import Link from "next/link";
 
 const HomeAssets = () => {
   return (
@@ -44,6 +45,11 @@ const HomeAssets = () => {
               alt="icon of a texture"
             />
             <strong>Free texture yeah!</strong>
+          </li>
+          <li>
+            <Link href="/search?query=&category=Texture">
+              <a className="btn">See textures</a>
+            </Link>
           </li>
         </ul>
       </div>

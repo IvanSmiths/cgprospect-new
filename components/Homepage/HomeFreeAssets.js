@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import Link from "next/link";
 import React from "react";
 import constants from "../../utils/constants";
 import Img from "../Img";
@@ -42,6 +43,11 @@ function HomeFreeAssets() {
               alt="icon of a texture"
             />
             <strong>Free texture yeah!</strong>
+          </li>
+          <li>
+            <Link href="/search?query=">
+              <a className="btn">See free assets</a>
+            </Link>
           </li>
         </ul>
       </div>
