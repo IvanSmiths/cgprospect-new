@@ -1,4 +1,4 @@
 const constants = {
-  IconWidth: "50px",
+  IconWidth: "45px",
 };
 export default constants;
