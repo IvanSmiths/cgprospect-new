@@ -134,7 +134,7 @@ export default function Search(props) {
             <SearchBar id="searchbar-page" />
           </li>
           <li
-            className="assets-reset-filters"
+            className="assets-reset-filters btn"
             onClick={() => router.push("/search")}
           >
             Reset Search

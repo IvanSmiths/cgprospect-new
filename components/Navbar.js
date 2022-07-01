@@ -19,17 +19,28 @@ const Navbar = () => {
       <Search id="searchbar-navbar" />
       <ul className="navbar-ul-cnt">
         <li>
-          <Link href="/">
+          <Link href="/search?">
+            <a>Assets</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/search?query=&category=3D+Model">
             <a>3D Models</a>
           </Link>
         </li>
         <li>
-          <Link href="/">
+          <Link href="/search?query=&category=Texture">
             <a>Textures</a>
           </Link>
         </li>
         <li>
-          <a href="https://www.patreon.com/cgprospect">Cahoot</a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.patreon.com/cgprospect"
+          >
+            Cahoot
+          </a>
         </li>
       </ul>
       <ul className="navbar-social-cnt">

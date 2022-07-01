@@ -16,7 +16,7 @@ body {
 
 :root {
   --main-bg-color: #000000;
-  --sec-bg-color: #343434;
+  --sec-bg-color: #282828;
   --main-color: #ffda38;
   --main-font-color: #ffffff;
   --sec-font-color: #bdbdbd;
@@ -74,6 +74,10 @@ a {
   line-height: var(--smallFontHeight);
 }
 
+::placeholder {
+  color: var(--sec-font-color);
+}
+
 h1,
 h2,
 h3,
@@ -107,7 +111,6 @@ strong {
   background-color: var(--main-color);
   width: fit-content;
   color: var(--main-bg-color);
-  margin-top: var(--marginElement);
   font-weight: 800;
   border-radius: var(--radius);
 }
@@ -188,6 +191,8 @@ select {
 }
 
 .searchbar {
+  background-color: var(--sec-bg-color);
+  color: var(--main-font-color);
   width: 100%;
   padding: 0.6rem;
 }

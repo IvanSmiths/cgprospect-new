@@ -59,31 +59,49 @@ function HomeMyself() {
         </ul>
         <ul className="homepage-myself-ul-cnt">
           <li>
-            <img
-              className="icon-social"
-              width={constants.IconWidth}
-              height={constants.IconWidth}
-              src="/images/icon-instagram.svg"
-              alt="icon of a 3d model"
-            />
+            <a
+              href="https://www.instagram.com/ivan_smiths/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                className="icon-social"
+                width={constants.IconWidth}
+                height={constants.IconWidth}
+                src="/images/icon-instagram.svg"
+                alt="icon of a 3d model"
+              />
+            </a>
           </li>
           <li>
-            <img
-              className="icon-social"
-              width={constants.IconWidth}
-              height={constants.IconWidth}
-              src="/images/icon-linkedin.svg"
-              alt="icon of a texture"
-            />
+            <a
+              href="https://www.linkedin.com/in/ivan-fabbri/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                className="icon-social"
+                width={constants.IconWidth}
+                height={constants.IconWidth}
+                src="/images/icon-linkedin.svg"
+                alt="icon of a texture"
+              />
+            </a>
           </li>
           <li>
-            <img
-              className="icon-social"
-              width={constants.IconWidth}
-              height={constants.IconWidth}
-              src="/images/icon-github.svg"
-              alt="icon of a texture"
-            />
+            <a
+              href="https://github.com/IvanSmiths"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                className="icon-social"
+                width={constants.IconWidth}
+                height={constants.IconWidth}
+                src="/images/icon-github.svg"
+                alt="icon of a texture"
+              />
+            </a>
           </li>
           <li></li>
         </ul>

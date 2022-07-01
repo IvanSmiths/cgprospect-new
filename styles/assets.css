@@ -67,3 +67,9 @@
   gap: var(--marginElement);
   margin-top: var(--marginElementLittle);
 }
+
+.assets-select {
+  color: var(--main-font-color);
+  font-size: var(--smallFont);
+  background-color: var(--main-bg-color);
+}

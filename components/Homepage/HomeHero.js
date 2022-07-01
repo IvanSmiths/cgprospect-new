@@ -14,27 +14,27 @@ const HomeHero = () => {
       <ul className="home-searchbar-suggested">
         <li className="main-font-color">Suggested:</li>
         <li className="sec-font-color">
-          <Link href={`https://www.cgprospect.com/search?query=pebbles`}>
+          <Link href={`/search?query=pebbles`}>
             <a>Pebbles, </a>
           </Link>
         </li>
         <li className="sec-font-color">
-          <Link href={`https://www.cgprospect.com/search?query=rock`}>
+          <Link href={`/search?query=rock`}>
             <a>Rock, </a>
           </Link>
         </li>
         <li className="sec-font-color">
-          <Link href={`https://www.cgprospect.com/search?query=apple`}>
+          <Link href={`/search?query=apple`}>
             <a>Apple, </a>
           </Link>
         </li>
         <li className="sec-font-color">
-          <Link href={`https://www.cgprospect.com/search?query=lemon`}>
+          <Link href={`/search?query=lemon`}>
             <a>Lemon, </a>
           </Link>
         </li>
         <li className="sec-font-color">
-          <Link href={`https://www.cgprospect.com/search?query=terrain`}>
+          <Link href={`/search?query=terrain`}>
             <a>Terrain, </a>
           </Link>
         </li>
