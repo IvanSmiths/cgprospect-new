@@ -79,6 +79,10 @@
   gap: var(--marginLayout);
 }
 
+.home-searchbar-suggested a {
+  color: var(--sec-font-color);
+}
+
 .homepage-model-cnt .btn {
   margin-top: var(--marginElement);
 }

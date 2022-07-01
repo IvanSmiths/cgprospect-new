@@ -12,28 +12,28 @@ const HomeHero = () => {
 
       <Search id="searchbar-home" />
       <ul className="home-searchbar-suggested">
-        <li className="main-font-color">Suggested:</li>
-        <li className="sec-font-color">
+        <li>Suggested:</li>
+        <li>
           <Link href={`/search?query=pebbles`}>
             <a>Pebbles, </a>
           </Link>
         </li>
-        <li className="sec-font-color">
+        <li>
           <Link href={`/search?query=rock`}>
             <a>Rock, </a>
           </Link>
         </li>
-        <li className="sec-font-color">
+        <li>
           <Link href={`/search?query=apple`}>
             <a>Apple, </a>
           </Link>
         </li>
-        <li className="sec-font-color">
+        <li>
           <Link href={`/search?query=lemon`}>
             <a>Lemon, </a>
           </Link>
         </li>
-        <li className="sec-font-color">
+        <li>
           <Link href={`/search?query=terrain`}>
             <a>Terrain, </a>
           </Link>
