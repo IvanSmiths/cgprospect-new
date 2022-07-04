@@ -18,7 +18,7 @@
 
 .header-home-cnt p {
   margin-top: var(--marginElementHome);
-  padding: 0 30vw 0 30vw;
+  padding: 0 30vw;
 }
 
 .label-header-home {
@@ -38,6 +38,9 @@
 }
 
 .homepage-assets-img-cnt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 60%;
   margin-left: var(--marginLayout);
 }
@@ -103,6 +106,7 @@
   width: 50%;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   margin-right: var(--marginLayoutBig);
 }
 
@@ -141,6 +145,7 @@
   width: 50%;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   margin-left: var(--marginLayoutBig);
 }
 

@@ -38,8 +38,10 @@ body {
 
   --radius: 6px;
   --radiusInput: 4px;
-}
 
+  --marginLayoutMed: 7vw;
+  --marginLayoutBigMed: 15vw;
+}
 @import "./home.css";
 @import "./assets.css";
 @import "./single-asset.css";
@@ -216,3 +218,5 @@ img {
 .icon-social {
   padding: 0.6rem;
 }
+
+@import "./query.css";

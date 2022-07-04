@@ -1,0 +1,42 @@
+@media screen and (max-width: 1200px) {
+  .home-free-3d-models-text-cnt {
+    top: 6%;
+  }
+
+  .header-home-cnt {
+    justify-content: center;
+    padding-top: 0;
+  }
+
+  .header-home-cnt p {
+    padding: 0 20vw;
+  }
+
+  .homepage-assets-text-cnt {
+    margin-right: var(--marginLayout);
+  }
+
+  .homepage-model-text-cnt {
+    margin-left: var(--marginLayout);
+  }
+
+  .homepage-model-img-cnt {
+    margin-right: var(--marginLayout);
+  }
+
+  .homepage-texture-img-cnt {
+    margin-left: var(--marginLayout);
+  }
+
+  .homepage-texture-text-cnt {
+    margin-right: var(--marginLayout);
+  }
+
+  .home-myself-cnt {
+    gap: 0;
+  }
+
+  .home-myself-text-cnt {
+    margin-right: var(--marginLayout);
+  }
+}
