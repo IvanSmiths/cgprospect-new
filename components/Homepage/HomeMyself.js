@@ -44,7 +44,7 @@ function HomeMyself() {
               src="/images/icon-texture.svg"
               alt="icon of a texture"
             />
-            <strong>Passionated blender user</strong>
+            <strong>Passionated Blender user</strong>
           </li>
           <li>
             <a
