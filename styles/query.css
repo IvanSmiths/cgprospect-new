@@ -1,6 +1,7 @@
 @media screen and (max-width: 1200px) {
   .home-free-3d-models-text-cnt {
-    top: 6%;
+    top: 10%;
+    width: 50%;
   }
 
   .header-home-cnt {
@@ -12,24 +13,15 @@
     padding: 0 20vw;
   }
 
-  .homepage-assets-text-cnt {
-    margin-right: var(--marginLayout);
-  }
-
-  .homepage-model-text-cnt {
-    margin-left: var(--marginLayout);
-  }
-
-  .homepage-model-img-cnt {
-    margin-right: var(--marginLayout);
-  }
-
-  .homepage-texture-img-cnt {
-    margin-left: var(--marginLayout);
-  }
-
+  .homepage-assets-text-cnt,
+  .homepage-model-img-cnt,
   .homepage-texture-text-cnt {
     margin-right: var(--marginLayout);
+  }
+
+  .homepage-model-text-cnt,
+  .homepage-texture-img-cnt {
+    margin-left: var(--marginLayout);
   }
 
   .home-myself-cnt {
@@ -38,5 +30,85 @@
 
   .home-myself-text-cnt {
     margin-right: var(--marginLayout);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .header-home-cnt .searchbar-cnt {
+    width: 50%;
+  }
+
+  .home-img-full {
+    display: none !important;
+  }
+
+  .home-searchbar-suggested {
+    margin-top: 2rem;
+  }
+  .homepage-assets-cnt,
+  .homepage-model-cnt,
+  .homepage-texture-cnt,
+  .home-myself-cnt {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .homepage-assets-img-cnt,
+  .homepage-assets-text-cnt,
+  .homepage-model-img-cnt,
+  .homepage-texture-text-cnt,
+  .homepage-model-text-cnt,
+  .homepage-texture-img-cnt,
+  .home-myself-text-cnt {
+    margin: 0;
+    width: 80%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .header-home-cnt p {
+    padding: 0;
+    width: 80%;
+  }
+
+  .homepage-assets-cnt {
+    margin-top: 3rem;
+  }
+
+  .homepage-model-cnt {
+    flex-direction: column-reverse;
+  }
+
+  .home-free-3d-models-cnt {
+    display: none;
+  }
+
+  .homepage-assets-ul-cnt {
+    align-items: center;
+  }
+
+  .homepage-assets-img-cnt,
+  .homepage-model-img-cnt,
+  .homepage-texture-img-cnt {
+    width: 90%;
+  }
+
+  .home-myself-text-cnt {
+    margin-top: var(--marginLayout);
+  }
+
+  .home-myself-img-cnt {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  .home-myself-img-cnt picture {
+    display: flex;
+    justify-content: center;
+  }
+
+  .homepage-myself-ul-cnt {
+    justify-content: center;
   }
 }

@@ -21,7 +21,7 @@ body {
   --main-font-color: #ffffff;
   --sec-font-color: #bdbdbd;
 
-  --bigFont: clamp(3rem, 6.9vw, 9rem);
+  --bigFont: clamp(3rem, 7.9vw, 9rem);
   --bigFontHeight: clamp(3rem, 12vw, 11rem);
   --mediumFont: clamp(1.8rem, 1.8vw, 2.9rem);
   --smallFont: clamp(0.95rem, 0.7vw, 1.1rem);

@@ -1,5 +1,6 @@
 .single-asset-cnt {
   display: flex;
+  gap: var(--marginLayout);
   margin-top: var(--marginFirstElement);
 }
 
@@ -9,6 +10,11 @@
   flex-direction: column;
   gap: var(--marginElement);
   padding-left: var(--marginLayout);
+}
+
+.single-asset-img-cnt img {
+  width: 100%;
+  height: auto;
 }
 
 .single-asset-info-cnt {
