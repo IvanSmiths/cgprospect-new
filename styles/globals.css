@@ -129,6 +129,13 @@ select {
   border-radius: var(--radiusInput) 0 0 var(--radiusInput);
 }
 
+select:focus,
+select:active,
+select:hover {
+  outline: none;
+  border: 0px;
+}
+
 ::-moz-selection {
   color: var(--main-color);
 }
@@ -154,12 +161,14 @@ select {
   z-index: 9;
   top: 0;
   left: 0;
-  background-color: var(--main-bg-color);
   display: flex;
   align-items: center;
   gap: 3rem;
   padding: 0.4rem 3rem;
   width: 100%;
+  background-color: rgba(0, 0, 0, 0.611);
+  backdrop-filter: blur(92.7px);
+  -webkit-backdrop-filter: blur(12.7px);
 }
 
 .navbar .searchbar-cnt {
@@ -255,7 +264,7 @@ img {
     left: -100%;
     opacity: 1;
     transition: all 0.5s ease;
-    background: #1a1a1af6;
+    background-color: #000000;
     z-index: 25;
   }
 
