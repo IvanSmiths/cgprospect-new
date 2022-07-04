@@ -111,4 +111,43 @@
   .homepage-myself-ul-cnt {
     justify-content: center;
   }
+
+  .assets-list-cnt {
+    width: 70%;
+    padding-right: var(--marginElement);
+  }
+
+  .assets-filters-cnt {
+    width: 50%;
+  }
+
+  .assets-list {
+    justify-content: flex-end;
+  }
+
+  .single-asset-cnt {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .single-asset-img-cnt {
+    width: 90%;
+    padding-left: 0;
+  }
+
+  .single-asset-info-cnt {
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .single-asset-info {
+    padding-right: 0;
+  }
+
+  .sponsor-cnt {
+    padding-right: 0;
+  }
 }
