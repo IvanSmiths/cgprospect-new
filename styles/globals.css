@@ -185,7 +185,7 @@ select:hover {
 }
 
 .navbar-social-cnt img {
-  width: 43px;
+  width: 40px;
 }
 
 .navbar-ul-cnt {
@@ -193,7 +193,7 @@ select:hover {
   justify-content: center;
   align-items: center;
   font-weight: 800;
-  gap: var(--marginElementLittle);
+  gap: var(--marginElement);
 }
 
 .searchbar-cnt {
