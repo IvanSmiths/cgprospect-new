@@ -72,10 +72,6 @@
     width: 80%;
   }
 
-  .homepage-assets-cnt {
-    margin-top: 3rem;
-  }
-
   .homepage-model-cnt {
     flex-direction: column-reverse;
   }
