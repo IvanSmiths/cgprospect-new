@@ -37,7 +37,7 @@ export default function ProductScreen({ product }) {
         <title>CG Prospect | Download {product.name} for free</title>
         <meta
           name="description"
-          content={`${product.name} is a free to download asset of CGProspect.`}
+          content={`${product.name} is a free to download asset of CG Prospect.`}
         />
 
         <meta
@@ -51,7 +51,7 @@ export default function ProductScreen({ product }) {
         />
         <meta
           property="og:description"
-          content={`${product.name} is a free to download asset of CGProspect`}
+          content={`${product.name} is a free to download asset of CG Prospect`}
         />
         <meta property="og:image" content={`${product.image}`} />
 
@@ -67,7 +67,7 @@ export default function ProductScreen({ product }) {
         />
         <meta
           name="twitter:description"
-          content={`${product.name} is a free to download asset of CGProspect`}
+          content={`${product.name} is a free to download asset of CG Prospect`}
         />
         <meta name="twitter:image" content={`${product.image}`} />
 
