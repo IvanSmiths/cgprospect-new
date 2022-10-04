@@ -35,7 +35,7 @@
   flex-direction: row;
   padding-right: 20vw;
   flex-wrap: wrap;
-  gap: var(--marginElementLittle) var(--marginElementBig);
+  gap: var(--marginElementLittle);
 }
 
 .single-asset-cnt h1 {
