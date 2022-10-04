@@ -64,20 +64,6 @@
   height: auto;
 }
 
-.homepage-assets-ul-cnt {
-  margin-top: var(--marginElement);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: var(--marginElementLittle);
-}
-
-.homepage-assets-ul-cnt li {
-  display: flex;
-  align-items: center;
-  gap: var(--marginElementLittle);
-}
-
 .homepage-model-cnt {
   margin-top: var(--marginSection);
   display: flex;
@@ -86,6 +72,10 @@
 
 .home-searchbar-suggested a {
   color: var(--sec-font-color);
+}
+
+.btn-website {
+  margin-top: var(--marginElement);
 }
 
 .homepage-model-cnt .btn {

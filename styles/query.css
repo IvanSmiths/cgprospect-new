@@ -13,6 +13,10 @@
     padding: 0 20vw;
   }
 
+  .search-cnt-mobile {
+    margin-top: var(--marginElement);
+  }
+
   .homepage-assets-text-cnt,
   .homepage-model-img-cnt,
   .homepage-texture-text-cnt {

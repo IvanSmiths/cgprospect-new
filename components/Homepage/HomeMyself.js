@@ -25,38 +25,6 @@ function HomeMyself() {
           game, and for sharing my stuff and knowledge with other passionated
           people.
         </p>
-        <ul className="homepage-assets-ul-cnt">
-          <li>
-            <img
-              className="icon"
-              width={constants.IconWidth}
-              height={constants.IconWidth}
-              src="/images/icon-3d-model.svg"
-              alt="icon of a 3d model"
-            />
-            <strong>Photogrammetrist</strong>
-          </li>
-          <li>
-            <img
-              className="icon"
-              width={constants.IconWidth}
-              height={constants.IconWidth}
-              src="/images/icon-texture.svg"
-              alt="icon of a texture"
-            />
-            <strong>Passionated Blender user</strong>
-          </li>
-          <li>
-            <a
-              href="https://www.ivansmiths.com"
-              target="_blank"
-              className="btn"
-              rel="noreferrer noopener"
-            >
-              See my website
-            </a>
-          </li>
-        </ul>
         <ul className="homepage-myself-ul-cnt">
           <li>
             <a
@@ -103,8 +71,17 @@ function HomeMyself() {
               />
             </a>
           </li>
-          <li></li>
         </ul>
+        <div className="btn-website">
+          <a
+            href="https://www.ivansmiths.com"
+            target="_blank"
+            className="btn "
+            rel="noreferrer noopener"
+          >
+            See my website
+          </a>
+        </div>
       </div>
     </section>
   );

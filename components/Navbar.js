@@ -102,27 +102,27 @@ const Navbar = () => {
             </a>
           </Link>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
-            <li onClick={closeMobileMenu}>
+            <li className="big-font" onClick={closeMobileMenu}>
               <Link href="/">
                 <a>Home</a>
               </Link>
             </li>
-            <li onClick={closeMobileMenu}>
+            <li className="big-font" onClick={closeMobileMenu}>
               <Link href="/search?">
                 <a>Assets</a>
               </Link>
             </li>
-            <li onClick={closeMobileMenu}>
+            <li className="big-font" onClick={closeMobileMenu}>
               <Link href="/search?query=&category=3D+Model">
                 <a>3D Models</a>
               </Link>
             </li>
-            <li onClick={closeMobileMenu}>
+            <li className="big-font" onClick={closeMobileMenu}>
               <Link href="/search?query=&category=Texture">
                 <a>Textures</a>
               </Link>
             </li>
-            <li onClick={closeMobileMenu}>
+            <li className="big-font" onClick={closeMobileMenu}>
               <a
                 target="_blank"
                 rel="noopener noreferrer"
@@ -134,7 +134,7 @@ const Navbar = () => {
             <li className="close-menu" onClick={closeMobileMenu}>
               X
             </li>
-            <li className="search-cnt">
+            <li className="search-cnt search-cnt-mobile">
               <Search id="searchbar-navbar" />
             </li>
           </ul>
