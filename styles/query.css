@@ -4,6 +4,10 @@
     width: 50%;
   }
 
+  .single-asset-info-outer {
+    flex-direction: column;
+    gap: var(--marginElement);
+  }
   .header-home-cnt {
     justify-content: center;
     padding-top: 0;
@@ -142,10 +146,6 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-  }
-
-  .single-asset-info {
-    padding-right: 0;
   }
 
   .sponsor-cnt {

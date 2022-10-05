@@ -24,7 +24,7 @@
   left: 0;
 }
 
-.single-asset-info-cnt div {
+.single-asset-info-cnt section {
   position: sticky;
   top: var(--marginFirstElement);
   left: 0;
@@ -32,8 +32,7 @@
 
 .single-asset-info {
   display: flex;
-  flex-direction: row;
-  padding-right: 20vw;
+  flex-direction: column;
   flex-wrap: wrap;
   gap: var(--marginElementLittle);
 }
@@ -71,7 +70,7 @@ span {
 }
 
 .more-details-cnt {
-  margin-top: var(--marginSection);
+  margin-top: var(--marginElementBig);
   display: flex;
 }
 
@@ -107,4 +106,10 @@ span {
 
 .donation-cnt {
   width: 50%;
+}
+
+.single-asset-info-outer {
+  display: flex;
+  flex-direction: row;
+  gap: var(--marginElementBig);
 }

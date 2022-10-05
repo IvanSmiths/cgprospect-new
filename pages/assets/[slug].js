@@ -92,84 +92,93 @@ export default function ProductScreen({ product }) {
           />
         </section>
         <main className="single-asset-info-cnt">
-          <div>
+          <section>
             <h1>
               Free to download: <br /> {product.name} {product.category}
             </h1>
-            <ul className="single-asset-info">
-              <li>
-                <img
-                  src="/images/icon-asset.svg"
-                  width={constants.IconWidth}
-                  height={constants.IconWidth}
-                  alt="category"
-                />
-                Asset:
-                {product.category === "3D Model" ? (
-                  <Link href="/search?query=&category=3D+Model">
-                    <a>{product.category}</a>
+            <div className="single-asset-info-outer">
+              <ul className="single-asset-info">
+                <li>
+                  <img
+                    src="/images/icon-asset.svg"
+                    width={constants.IconWidth}
+                    height={constants.IconWidth}
+                    alt="category"
+                  />
+                  Asset:
+                  {product.category === "3D Model" ? (
+                    <Link href="/search?query=&category=3D+Model">
+                      <a>{product.category}</a>
+                    </Link>
+                  ) : (
+                    <Link href="/search?query=&category=Texture">
+                      <a>{product.category}</a>
+                    </Link>
+                  )}
+                </li>
+                <li>
+                  <img
+                    src="/images/icon-category.svg"
+                    width={constants.IconWidth}
+                    height={constants.IconWidth}
+                    alt="category"
+                  />
+                  Category:
+                  <Link href={`/search?query=&brand=${product.brand}`}>
+                    <a>{product.brand}</a>
                   </Link>
-                ) : (
-                  <Link href="/search?query=&category=Texture">
-                    <a>{product.category}</a>
+                </li>
+                <li>
+                  <img
+                    src="/images/icon-scale.svg"
+                    width={constants.IconWidth}
+                    height={constants.IconWidth}
+                    alt="category"
+                  />
+                  Scale: <span>{product.scale} meters</span>
+                </li>
+              </ul>
+              <ul className="single-asset-info">
+                <li>
+                  <img
+                    src="/images/icon-method.svg"
+                    width={constants.IconWidth}
+                    height={constants.IconWidth}
+                    alt="category"
+                  />
+
+                  <Link href={`/search?method=${product.method}`}>
+                    <a>
+                      Method: <span>{product.method}</span>
+                    </a>
                   </Link>
-                )}
-              </li>
-              <li>
-                <img
-                  src="/images/icon-category.svg"
-                  width={constants.IconWidth}
-                  height={constants.IconWidth}
-                  alt="category"
-                />
-                Category:
-                <Link href={`/search?query=&brand=${product.brand}`}>
-                  <a>{product.brand}</a>
-                </Link>
-              </li>
-              <li>
-                <img
-                  src="/images/icon-scale.svg"
-                  width={constants.IconWidth}
-                  height={constants.IconWidth}
-                  alt="category"
-                />
-                Scale: <span>{product.scale} meters</span>
-              </li>
-              <li>
-                <img
-                  src="/images/icon-method.svg"
-                  width={constants.IconWidth}
-                  height={constants.IconWidth}
-                  alt="category"
-                />
-                Method: <span>{product.method}</span>
-              </li>
-              <li>
-                <img
-                  src="/images/icon-location.svg"
-                  width={constants.IconWidth}
-                  height={constants.IconWidth}
-                  alt="category"
-                />
-                Location: <span>{product.location}</span>
-              </li>
-              <li>
-                <img
-                  src="/images/icon-date.svg"
-                  width={constants.IconWidth}
-                  height={constants.IconWidth}
-                  alt="category"
-                />
-                Published: <span>17/09/2021</span>
-              </li>
-            </ul>
+                </li>
+                <li>
+                  <img
+                    src="/images/icon-location.svg"
+                    width={constants.IconWidth}
+                    height={constants.IconWidth}
+                    alt="category"
+                  />
+                  Location: <span>{product.location}</span>
+                </li>
+                <li>
+                  <img
+                    src="/images/icon-date.svg"
+                    width={constants.IconWidth}
+                    height={constants.IconWidth}
+                    alt="category"
+                  />
+                  Published: <span>17/09/2021</span>
+                </li>
+              </ul>
+            </div>
             <div className="sponsor-cnt">
               <span>Sponsored by:</span>
               <span className="sponsor-name">No one yet</span>
               <img src="/images/banner.svg" alt="" />
             </div>
-          </div>
+          </section>
         </main>
       </div>
       <section className="more-details-cnt">
