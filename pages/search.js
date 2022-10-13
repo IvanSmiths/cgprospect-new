@@ -6,7 +6,7 @@ import SearchBar from "../components/Search";
 import Product from "../models/Product";
 import { Pagination } from "@material-ui/lab";
 
-const PAGE_SIZE = 3;
+const PAGE_SIZE = 1;
 
 export default function Search(props) {
   const router = useRouter();
@@ -65,6 +65,8 @@ export default function Search(props) {
   const sortHandler = (e) => {
     filterSearch({ sort: e.target.value });
   };
+
+  console.log(pages);
 
   return (
     <div className="assets-cnt">
